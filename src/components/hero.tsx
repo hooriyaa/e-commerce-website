@@ -20,7 +20,7 @@ const Hero = () => {
             <br />
             Interior
           </p>
-          <div className="sm:mr-40 whitespace-nowrap">
+          <div className="sm:mr-44 whitespace-nowrap">
             <button className="inline-flex text-[#FFFFFF] bg-[#029FAE] border-0 py-2 px-6 focus:outline-none hover:bg-[#02a0aede] rounded text-lg">
               Shop Now
               <FaArrowRightLong className="text-[#FFFFFF] text-sm mt-2 ml-5" />
