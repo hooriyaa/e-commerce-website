@@ -13,14 +13,14 @@ const Hero = () => {
           <h1 className="title-font md:mr-44 mr-4 mb-1 font-normal whitespace-nowrap text-[#272343] text-[22px] sm:text-[18px] justify-center">
             Welcome to Chairy
           </h1>
-            <p className="title-font sm:ml-40 md:mr-44 mr-4 whitespace-nowrap text-[#272343] text-[22px] sm:text-[18px]  sm:mb-3 mb-5 leading-1 sm:text-4xl text-5xl font-bold font-[Inter] justify-center">
+            <p className="title-font sm:ml-40 md:mr-44 mr-4 whitespace-nowrap text-[#272343] text-[22px] sm:text-[33px]  sm:mb-3 mb-5 leading-1 sm:text-4xl text-5xl font-bold font-[Inter] justify-center">
             Best Furniture
             <br />
             Collection for your
             <br />
             Interior
           </p>
-          <div className="sm:mr-44 whitespace-nowrap">
+          <div className="sm:mr-[147px] whitespace-nowrap">
             <button className="inline-flex text-[#FFFFFF] bg-[#029FAE] border-0 py-2 px-6 focus:outline-none hover:bg-[#02a0aede] rounded text-lg">
               Shop Now
               <FaArrowRightLong className="text-[#FFFFFF] text-sm mt-2 ml-5" />
