@@ -10,15 +10,16 @@ import Image from "next/image";
 
 const FeaturesProducts = () => {
   return (
-    <div className="w-[500px] sm:w-auto mx-64  sm:mx-0">
-      <section className="text-gray-600 sm:left-0 sm:ml-0">
-        <h1 className=" text-base md:text-xl lg:text-2xl font-semibold font-[inter] text-center  p-6">
+    <div className="w-[700px] ml-20 sm:ml-0 sm:w-auto sm:mx-0 ">
+    <section className="text-gray-600 body-font sm:left-0 ">
+      <div className="container px-5 pt-24 mx-auto">
+        <h1 className=" text-4xl md:text-xl lg:text-2xl font-semibold font-[Inter] ml-48 sm:ml-[40%] p-6 pb-12">
           Featured Products
         </h1>
         <div className="container px-5 mx-auto">
           <div className="flex flex-wrap justify-center items-center -m-4 ">
             {/* Product 1 */}
-            <div className="lg:w-1/5 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <h1 className="absolute top-2 left-2 text-white bg-[#01AD5A] p-2 text-xs rounded-md">
                   New
@@ -44,7 +45,7 @@ const FeaturesProducts = () => {
             </div>
 
             {/* Product 2 */}
-            <div className="lg:w-1/5 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <h1 className="absolute top-2 left-2 text-white bg-[#F5813F] p-2 text-xs rounded-md">
                   Sales
@@ -69,7 +70,7 @@ const FeaturesProducts = () => {
             </div>
 
             {/* Product 3 */}
-            <div className="lg:w-1/5 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <Image
                   src={product3}
@@ -91,7 +92,7 @@ const FeaturesProducts = () => {
             </div>
 
             {/* Product 4 */}
-            <div className="lg:w-1/5 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <Image
                   src={product4}
@@ -112,6 +113,7 @@ const FeaturesProducts = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
     </div>

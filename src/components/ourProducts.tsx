@@ -13,9 +13,10 @@ import Link from "next/link";
 
 const OurProducts = () => {
   return (
-    <div className="w-[500px] sm:w-auto mx-64  sm:mx-0">
-      <section className="text-[#E5E5E5]  mt-12 ">
-        <h1 className=" text-base md:text-xl lg:text-2xl text-[#272343] font-semibold font-[inter] text-center sm:pl-12  md:px-6 py-4 ">
+    <div className="w-[700px] ml-20 sm:ml-0 sm:w-auto sm:mx-0">
+      <section className="text-gray-600 body-font  sm:left-0 ">
+        <div className="container px-5 pt-24 mx-auto">
+          <h1 className=" text-3xl md:text-xl lg:text-2xl font-semibold font-[Inter] ml-48 sm:ml-[40%] p-6 pb-5 sm:pb-5">
           Our Products
         </h1>
         <div className="flex items-center justify-center pl-8 mb-8 gap-7 text-[#272343] whitespace-nowrap">
@@ -50,7 +51,7 @@ const OurProducts = () => {
         <div className="container px-5 mx-auto">
           <div className="flex flex-wrap justify-center items-center -m-4 ">
             {/* Product 1 */}
-            <div className="lg:w-1/5 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <h1 className="absolute top-2 left-2 text-white bg-[#01AD5A] p-2 text-xs rounded-md">
                   New
@@ -76,7 +77,7 @@ const OurProducts = () => {
             </div>
 
             {/* Product 2 */}
-            <div className="lg:w-1/5 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <h1 className="absolute top-2 left-2 text-white bg-[#F5813F] p-2 text-xs rounded-md">
                   Sales
@@ -101,7 +102,7 @@ const OurProducts = () => {
             </div>
 
             {/* Product 3 */}
-            <div className="lg:w-1/5 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <Image
                   src={product3}
@@ -123,7 +124,7 @@ const OurProducts = () => {
             </div>
 
             {/* Product 4 */}
-            <div className="lg:w-1/4 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <Image
                   src={product4}
@@ -145,7 +146,7 @@ const OurProducts = () => {
             </div>
 
             {/* Product 5 */}
-            <div className="lg:w-1/5 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <h1 className="absolute top-2 left-2 text-white bg-[#01AD5A] p-2 text-xs rounded-md">
                   New
@@ -169,7 +170,7 @@ const OurProducts = () => {
               </div>
             </div>
             {/* Product 6 */}
-            <div className="lg:w-1/5 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <h1 className="absolute top-2 left-2 text-white bg-[#F5813F] p-2 text-xs rounded-md">
                   Sales
@@ -193,7 +194,7 @@ const OurProducts = () => {
               </div>
             </div>
             {/* Product 7 */}
-            <div className="lg:w-1/5 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <Image
                   src={product7}
@@ -214,7 +215,7 @@ const OurProducts = () => {
               </div>
             </div>
             {/* Product 8 */}
-            <div className="lg:w-1/4 md:w-1/2 sm:w-1/2 p-4 w-full hover:scale-105 duration-100 hover:duration-150">
+            <div className="lg:w-1/5 md:w-1/4 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
               <span className="block relative h-48 rounded overflow-hidden">
                 <Image
                   src={product2}
@@ -235,6 +236,7 @@ const OurProducts = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
     </div>

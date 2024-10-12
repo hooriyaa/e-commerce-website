@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <div>
       {/* navigation div */}
-      <div className="bg-white py-4 sticky top-0 z-10 px-4 sm:px-8 md:px-16 w-full">
+      <div className="bg-white py-4 sticky top-0 z-10 px-4 sm:px-8 md:px-16 sm:w-fit">
         <div className="w-full flex items-center justify-between">
           {/* Left side: Hamburger menu and links */}
           <div className="flex items-center gap-6">
@@ -17,7 +17,7 @@ const Navigation = () => {
             </div>
 
             {/* Links for larger screens */}
-            <div className="flex items-center gap-10">
+            <div className="flex items-center gap-10 sm:gap-7">
               <Link href="/" className="hover:text-[#029FAE] cursor-pointer">
                 Home
               </Link>
@@ -38,7 +38,7 @@ const Navigation = () => {
 
           {/* Contact section */}
           <div className="flex gap-1 text-sm md:text-base whitespace-nowrap">
-            <h1 className="text-gray-500 pl-16">Contact:</h1>
+            <h1 className="text-gray-500 lg:pl-40 pl-36">Contact:</h1>
             <span className="font-medium text-[#272343]">
               (808) 555-0111
             </span>

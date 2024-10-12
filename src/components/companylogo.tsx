@@ -9,15 +9,15 @@ import logo7 from "/public/images/Logo7.png";
 
 const Companylogo = () => {
   return (
-    <div className="bg-white flex flex-wrap items-center justify-evenly sm:w-full md:w-[73%] mb-7 mx-auto ">
-    <div className="flex items-center justify-center ml-80 sm:ml-0 gap-10 sm:gap-15">
-      <Image width={400} height={400} alt='logo1' src={logo1} className='h-20 w-20'/>
-        <Image width={400} height={400} alt='logo1' src={logo2} className='h-20 w-20'/>
-        <Image width={400} height={400} alt='logo1' src={logo3} className='h-20 w-20'/>
-        <Image width={400} height={400} alt='logo1' src={logo4} className='h-20 w-20'/>
-        <Image width={400} height={400} alt='logo1' src={logo5} className='h-20 w-20'/>
-        <Image width={400} height={400} alt='logo1' src={logo6} className='h-20 w-20'/>
-        <Image width={400} height={400} alt='logo1' src={logo7} className='h-20 w-20'/>
+    <div className="bg-white flex flex-wrap items-center justify-evenly sm:w-full md:w-[73%]  mx-auto ">
+    <div className="flex items-center justify-center mt-20 ml-80 sm:ml-0 gap-10 sm:gap-15">
+      <Image width={700} height={700} alt='logo1' src={logo1} className='h-20 w-20'/>
+        <Image width={700} height={700} alt='logo1' src={logo2} className='h-20 w-20'/>
+        <Image width={700} height={700} alt='logo1' src={logo3} className='h-20 w-20'/>
+        <Image width={700} height={700} alt='logo1' src={logo4} className='h-20 w-20'/>
+        <Image width={700} height={700} alt='logo1' src={logo5} className='h-20 w-20'/>
+        <Image width={700} height={700} alt='logo1' src={logo6} className='h-20 w-20'/>
+        <Image width={700} height={700} alt='logo1' src={logo7} className='h-20 w-20'/>
       </div>
     </div>
   );

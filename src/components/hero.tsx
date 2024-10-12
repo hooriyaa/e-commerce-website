@@ -9,11 +9,11 @@ const Hero = () => {
   return (
     <>
       <div className="container mx-auto flex flex-col px-5  sm:flex-row items-center justify-center bg-[#F0F2F3] w-[893px] sm:w-[1100px] ">
-        <div className="lg:flex-grow flex-1 md:w-1/2 lg:pr-40  flex flex-col md:text-left mb-28 items-center text-center my-20 sm:my-0">
-          <h1 className="title-font md:mr-44 mr-4 mb-1 font-normal whitespace-nowrap text-[#272343] text-[22px] sm:text-[18px] justify-center">
+        <div className="lg:flex-grow flex-1 md:w-1/2 lg:pr-40 sm:pl-10  flex flex-col md:text-left mb-28 items-center text-center mt-24 sm:my-0">
+          <h1 className="title-font md:mr-44 mr-4 mb-3 font-normal whitespace-nowrap text-[#272343] text-[22px] sm:text-[18px] justify-center">
             Welcome to Chairy
           </h1>
-            <p className="title-font sm:ml-40 md:mr-44 mr-4 whitespace-nowrap text-[#272343] text-[22px] sm:text-[33px]  sm:mb-3 mb-5 leading-1 sm:text-4xl text-5xl font-bold font-[Inter] justify-center">
+          <p className="title-font sm:ml-36 md:mr-44 mr-4 whitespace-nowrap text-[#272343] text-[22px] sm:text-[30px]  sm:mb-3 mb-5 leading-1 sm:text-4xl text-5xl font-bold font-[Inter] justify-center">
             Best Furniture
             <br />
             Collection for your
@@ -28,12 +28,12 @@ const Hero = () => {
           </div>
         </div>
         <div>
-          <div className="relative w-[520px] h-[430px] mb-24">
+          <div className="relative h-[460px] mb-24">
             {/* Background shape image */}
             <Image
               src={image4}
               alt="Background Shape"
-              className="z-0 object-contain"
+              className="z-0 object-contain h-[500px] sm:h-auto"
             />
 
             {/* Chair image */}
@@ -42,21 +42,7 @@ const Hero = () => {
               alt="Chair"
               width={380}
               height={430}
-              className="absolute top-0 left-0 z-10 p-10 object-contain"
-            />
-          </div>
-        </div>
-      </div>
-      {/* Features Section */}
-      <div className="flex justify-center">
-        <div className=" pb-36">
-          <div className="flex justify-center items-center">
-            <Image
-              src={image5}
-              alt="features"
-              width={600}
-              height={600}
-              className="w-[1100px] left-56 h-auto  absolute buttom-0 sm:left-24 z-10 px-5"
+              className="absolute top-0 left-0 z-10 p-10 ml-40 sm:ml-2   sm:mr-24   object-contain object-center"
             />
           </div>
         </div>

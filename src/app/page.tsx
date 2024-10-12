@@ -1,5 +1,6 @@
 import ClientsReviews from "@/components/clientsReviews";
 import Companylogo from "@/components/companylogo";
+import Features from "@/components/features";
 import FeaturesProducts from "@/components/featuresProducts";
 import Hero from "@/components/hero";
 import OurProducts from "@/components/ourProducts";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <div>
      <Hero/>
+     <Features/>
      <Companylogo/>
      <FeaturesProducts/>
      <TopCategory/>
