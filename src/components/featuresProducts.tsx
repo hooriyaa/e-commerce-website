@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const FeaturesProducts = () => {
   return (
-    <div className="w-[500px] sm:w-auto mx-52 sm:mx-0">
+    <div className="w-[500px] sm:w-auto mx-64  sm:mx-0">
       <section className="text-gray-600 sm:left-0 sm:ml-0">
         <h1 className=" text-base md:text-xl lg:text-2xl font-semibold font-[inter] text-center  p-6">
           Featured Products
