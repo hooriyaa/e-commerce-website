@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Features1 from "/public/images/Features1.png";
-import Features2 from "/public/images/Features2.png";
-import Features3 from "/public/images/Features3.png";
-import Features4 from "/public/images/Features4.png";
+import Features2 from "/public/images/features2.png";
+import Features3 from "/public/images/features3.png";
+import Features4 from "/public/images/features4.png";
 
 const Features = () => {
   return (
