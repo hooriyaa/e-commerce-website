@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import image3 from "/public/images/pic1.png";
 import image4 from "/public/images/BG Shapes.png";
-import image5 from "/public/images/Feature.png";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const Hero = () => {
