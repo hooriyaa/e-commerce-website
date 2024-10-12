@@ -13,11 +13,12 @@ import Link from "next/link";
 
 const OurProducts = () => {
   return (
-    <section className="text-[#E5E5E5]  relative left-64 sm:left-0 sm:ml-0 mt-12">
-      <h1 className=" text-base md:text-xl lg:text-2xl text-[#272343] font-semibold font-[inter] text-center sm:pl-12  md:px-6 py-4">
+    <div className="w-[500px] sm:w-auto mx-52 sm:mx-0">
+      <section className="text-[#E5E5E5]  mt-12 ">
+      <h1 className=" text-base md:text-xl lg:text-2xl text-[#272343] font-semibold font-[inter] text-center sm:pl-12  md:px-6 py-4 ">
         Our Products
       </h1>
-      <div className="flex items-center justify-center pl-8 mb-8 gap-7 text-[#272343]">
+      <div className="flex items-center justify-center pl-8 mb-8 gap-7 text-[#272343] whitespace-nowrap">
         <Link href={"/"} className=" hover:text-[#029FAE] cursor-pointer">
           All
         </Link>
@@ -236,6 +237,8 @@ const OurProducts = () => {
         </div>
       </div>
     </section>
+    </div>
+    
   );
 };
 

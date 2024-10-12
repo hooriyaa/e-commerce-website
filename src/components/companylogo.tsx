@@ -1,11 +1,11 @@
-import Image from 'next/image'
+import Image from "next/image";
 import logo1 from "/public/images/logo.png";
-import logo2 from "/public/images/logo (1).png";
-import logo3 from "/public/images/logo (2).png";
-import logo4 from "/public/images/logo (3).png";
-import logo5 from "/public/images/logo (4).png";
-import logo6 from "/public/images/logo (5).png";
-import logo7 from "/public/images/logo (6).png";
+import logo2 from "/public/images/Logo1.png";
+import logo3 from "/public/images/logo2.png";
+import logo4 from "/public/images/Logo3.png";
+import logo5 from "/public/images/logo4.png";
+import logo6 from "/public/images/logo5.png";
+import logo7 from "/public/images/logo6.png";
 
 const Companylogo = () => {
   return (
@@ -20,7 +20,7 @@ const Companylogo = () => {
         <Image width={400} height={400} alt='logo1' src={logo7} className='h-20 w-20'/>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Companylogo
+export default Companylogo;
