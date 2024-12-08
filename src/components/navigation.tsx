@@ -1,7 +1,5 @@
 "use client";
 import Link from "next/link";
-import { RxHamburgerMenu } from "react-icons/rx";
-
 const Navigation = () => {
   return (
     <div>
@@ -11,9 +9,7 @@ const Navigation = () => {
           {/* Left side: Hamburger menu and links */}
           <div className="flex items-center gap-6">
             {/* Hamburger Menu */}
-            <div className="flex items-center gap-2 border border-[#272343] bg-white px-3 py-2 rounded-md">
-              <RxHamburgerMenu className="w-5 h-5 cursor-pointer" />
-              <h1 className="text-sm lg:text-base whitespace-nowrap">All Categories</h1>
+            <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-md">
             </div>
 
             {/* Links for larger screens */}
@@ -21,25 +17,25 @@ const Navigation = () => {
               <Link href="/" className="hover:text-[#029FAE] cursor-pointer">
                 Home
               </Link>
-              <Link href="/shop" className="hover:text-[#029FAE] cursor-pointer">
-                Shop
-              </Link>
-              <Link href="/product" className="hover:text-[#029FAE] cursor-pointer">
-                Product
-              </Link>
-              <Link href="/pages" className="hover:text-[#029FAE] cursor-pointer">
-                Pages
-              </Link>
               <Link href="/about" className="hover:text-[#029FAE] cursor-pointer">
                 About
+              </Link>
+              <Link href="/allProducts" className="hover:text-[#029FAE] cursor-pointer">
+                Product
+              </Link>
+              <Link href="/FAQ" className="hover:text-[#029FAE] cursor-pointer">
+              FAQ
+              </Link>
+              <Link href="/contact" className="hover:text-[#029FAE] cursor-pointer">
+                Contact
               </Link>
             </div>
           </div>
 
           {/* Contact section */}
-          <div className="flex gap-1 text-sm md:text-base whitespace-nowrap">
+          <div className="sm:flex gap-1 text-sm md:text-base whitespace-nowrap md:ml-72 ml-20">
             <h1 className="text-gray-500 lg:pl-40 pl-36">Contact:</h1>
-            <span className="font-medium text-[#272343]">
+            <span className="font-medium text-[#272343] ">
               (808) 555-0111
             </span>
           </div>

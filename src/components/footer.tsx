@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <div className="w-[890px] sm:w-auto sm:mx-0">
         <footer className="text-gray-600 body-font  sm:left-0 ">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5  mx-auto">
         <div className="flex flex-wrap md:text-left text-center justify-center order-first">
           <div className="lg:w-1/4 md:w-1/3 sm:w-1/2  w-full px-4">
             <div className="flex">
@@ -34,7 +34,7 @@ const Footer = () => {
                 interdum. Cras egestas purus
               </h1>
               {/* facebbok image and icons */}
-              <div className="flex pt-3 gap-1 justify-center sm:justify-start">
+              <div className="flex pt-3 gap-3 justify-center sm:justify-start">
                 <Image
                   src={image2}
                   width={700}

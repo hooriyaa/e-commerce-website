@@ -5,8 +5,8 @@ import product3 from "/public/images/product3.png";
 import product4 from "/public/images/product4.png";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
-
 import Image from "next/image";
+
 
 const RecentlyProducts = () => {
   return (
@@ -24,6 +24,7 @@ const RecentlyProducts = () => {
                   <h1 className="absolute top-2 left-2 text-white bg-[#01AD5A] p-2 text-xs rounded-md">
                     New
                   </h1>
+                 
                   <FaRegHeart className="absolute top-2 right-2 text-black bg-[#FFFFFF] p-2 text-3xl rounded-md" />
                   <Image
                     src={product1}
