@@ -3,15 +3,15 @@ import Hero from "@/components/hero";
 import OurProducts from "@/components/ourProducts";
 import RecentlyProducts from "@/components/recentProducts";
 import TopCategory from "@/components/topCategory";
-import FeaturesProducts from "./FeaturesProducts/page";
 import ChairGallery from "@/components/chairGallery";
+import TopFeatures from "@/components/topFeatures";
 
 export default function Home() {
   return (
     <div>
      <Hero/>
      <Companylogo/>
-     <FeaturesProducts/>
+     <TopFeatures/>
      <TopCategory/>
      <ChairGallery/>
      <OurProducts/>
