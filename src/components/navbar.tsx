@@ -38,12 +38,11 @@ const Navbar = () => {
           {/* cart div */}
           <div className="flex gap-2 bg-[#FFFFFF]  px-4 py-2 rounded-md">
             <IoCartOutline className="w-6 h-7 cursor-pointer " />
-            <Link href="/cart"></Link>
+            <Link href="/cart">
             <h1>Cart</h1>
-            <h1 className="h-6 w-6 rounded-full bg-[#007580] text-[#FFFFFF] text-center text-sm  ">
-              2
-            </h1>
+            </Link>
           </div>
+         
           <div className="bg-[#FFFFFF] h-[44px] w-[44px] rounded-md p-3">
             <FaRegHeart className="w-5 h-5 text-sm cursor-pointer " />
           </div>
