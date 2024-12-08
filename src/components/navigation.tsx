@@ -33,11 +33,8 @@ const Navigation = () => {
           </div>
 
           {/* Contact section */}
-          <div className="sm:flex gap-1 text-sm md:text-base whitespace-nowrap md:ml-72 ml-20">
-            <h1 className="text-gray-500 lg:pl-40 pl-36">Contact:</h1>
-            <span className="font-medium text-[#272343] ">
-              (808) 555-0111
-            </span>
+          <div className="sm:flex gap-1 text-sm md:text-base whitespace-nowrap md:ml-72 ">
+            <h1 className="text-gray-500 lg:pl-40 pl-36">Contact: (808) 555-0111</h1>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import image2 from "/public/images/Profileicon.png";
 import { IoCartOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -37,6 +38,7 @@ const Navbar = () => {
           {/* cart div */}
           <div className="flex gap-2 bg-[#FFFFFF]  px-4 py-2 rounded-md">
             <IoCartOutline className="w-6 h-7 cursor-pointer " />
+            <Link href="/cart"></Link>
             <h1>Cart</h1>
             <h1 className="h-6 w-6 rounded-full bg-[#007580] text-[#FFFFFF] text-center text-sm  ">
               2
