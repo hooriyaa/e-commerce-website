@@ -103,7 +103,7 @@ function ProductCard({ image, title, price, className }: { image: string; title:
             src={image}
             alt={title}
             fill
-            className="object-cover w-full h-full transition-transform group-hover:scale-105"
+            className="object-contain w-full h-full transition-transform group-hover:scale-105"
           />
         </div>
         <h3 className="text-lg text-[#2A254B] font-normal mb-2">{title}</h3>

@@ -36,7 +36,7 @@ const Navbar = () => {
         {/* right items */}
         <div className="flex gap-4">
           {/* cart div */}
-          <div className="flex gap-2 bg-[#FFFFFF]  px-4 py-2 rounded-md">
+          <div className="flex gap-2 bg-[#FFFFFF]  px-4 py-2 rounded-md ml-8">
             <IoCartOutline className="w-6 h-7 cursor-pointer " />
             <Link href="/cart">
             <h1>Cart</h1>

@@ -4,7 +4,7 @@ import { FaRegHeart, FaRegTrashAlt } from "react-icons/fa";
 
 export default function Cart() {
   return (
-    <div className="min-h-screen bg-gray-50 flex justify-center py-10 text-[Inter]">
+    <div className="min-h-screen bg-gray-50 flex justify-center py-10 text-[Inter] w-[800px] lg:w-full">
       <div className="container mx-auto px-4 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 ">
           {/* Bag Section */}

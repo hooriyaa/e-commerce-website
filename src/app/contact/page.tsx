@@ -5,7 +5,7 @@ import { GoClockFill } from "react-icons/go";
 
 export default function Contact() {
   return (
-    <div className=" flex flex-col items-center justify-center mx-auto w-[800px]  ml-14 md:ml-auto md:w-full">
+    <div className=" flex flex-col items-center justify-center mx-auto w-[800px]  ml-14 md:ml-auto md:w-full mt-8">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-2xl md:text-3xl font-bold">Get In Touch With Us</h1>
