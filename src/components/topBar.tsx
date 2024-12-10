@@ -22,7 +22,6 @@ export default function TopBar() {
           <CiCircleAlert className="text-2xl rounded-xl text-[#FFFFFF] pt-1" />
           <option className="text-[#FFFFFF] ">Need Help</option>
           </h1>
-          
         </div>
       </div>
     </div>
