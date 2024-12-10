@@ -4,7 +4,7 @@ import HamburgerMenu from "./hamburger";
 
 const Navigation = () => {
   return (
-    <div className="bg-[#FFFFFF] top-0 px-4 sm:px-8 md:px-16 font-[Inter] ">
+    <div className="bg-[#FFFFFF] top-0 px-4 sm:px-8 md:px-16 font-[Inter] py-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4 md:gap-8">
           {/* Hamburger Menu for smaller screens */}

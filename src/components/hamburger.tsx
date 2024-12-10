@@ -8,7 +8,7 @@ const HamburgerMenu = () => {
       <div className="block sm:hidden">
         <Sheet>
           {/* Trigger for the hamburger menu */}
-          <SheetTrigger className="flex items-center px-3 py-2 rounded-md bg-gray-100 hover:bg-gray-200">
+          <SheetTrigger className="flex items-center px-3 py-2 rounded-md">
             <MenuIcon className="h-7 w-7 text-gray-700" />
           </SheetTrigger>
   
