@@ -87,7 +87,7 @@ export default function About() {
 
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
-    <div className="p-6 bg-[#F9F9F9] rounded-lg shadow-sm">
+    <div className="p-6 bg-[#F9F9F9] rounded-lg shadow-sm  transition-all duration-300 ease-in-out hover:bg-[#e4e4e4] hover:scale-105">
       <div className="mb-4">{icon}</div>
       <h3 className="text-lg font-normal mb-2 text-[#007580] font-[Inter] ">{title}</h3>
       <p className="text-[#007580] text-sm font-[Inter] font-normal">{description}</p>
