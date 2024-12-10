@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { LuPlus } from "react-icons/lu";
 
 const FAQ = () => {
@@ -10,7 +10,8 @@ const FAQ = () => {
             Questions Looks Here
           </h1>
           <p className="lg:w-1/2 w-full leading-relaxed text-[#4F4F4F] font-normal">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the
           </p>
         </div>
         <div className="flex flex-wrap -m-4 mx-5 mb-4">
@@ -23,7 +24,10 @@ const FAQ = () => {
                 <LuPlus className="text-[#333333] h-[24px] w-[24px]" />
               </div>
               <p className="leading-relaxed text-base font-normal text-[#4F4F4F]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis modi ullam amet debitis libero veritatis enim repellat optio natus eum delectus deserunt, odit expedita eos molestiae ipsa totam quidem?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                quis modi ullam amet debitis libero veritatis enim repellat
+                optio natus eum delectus deserunt, odit expedita eos molestiae
+                ipsa totam quidem?
               </p>
             </div>
           </div>
@@ -36,7 +40,10 @@ const FAQ = () => {
                 <LuPlus className="text-[#333333] h-[24px] w-[24px]" />
               </div>
               <p className="leading-relaxed text-base font-normal text-[#4F4F4F]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis modi ullam amet debitis libero veritatis enim repellat optio natus eum delectus deserunt, odit expedita eos molestiae ipsa totam quidem?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                quis modi ullam amet debitis libero veritatis enim repellat
+                optio natus eum delectus deserunt, odit expedita eos molestiae
+                ipsa totam quidem?
               </p>
             </div>
           </div>
@@ -49,7 +56,10 @@ const FAQ = () => {
                 <LuPlus className="text-[#333333] h-[24px] w-[24px]" />
               </div>
               <p className="leading-relaxed text-base font-normal text-[#4F4F4F]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis modi ullam amet debitis libero veritatis enim repellat optio natus eum delectus deserunt, odit expedita eos molestiae ipsa totam quidem?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                quis modi ullam amet debitis libero veritatis enim repellat
+                optio natus eum delectus deserunt, odit expedita eos molestiae
+                ipsa totam quidem?
               </p>
             </div>
           </div>
@@ -62,7 +72,10 @@ const FAQ = () => {
                 <LuPlus className="text-[#333333] h-[24px] w-[24px]" />
               </div>
               <p className="leading-relaxed text-base font-normal text-[#4F4F4F]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis modi ullam amet debitis libero veritatis enim repellat optio natus eum delectus deserunt, odit expedita eos molestiae ipsa totam quidem?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                quis modi ullam amet debitis libero veritatis enim repellat
+                optio natus eum delectus deserunt, odit expedita eos molestiae
+                ipsa totam quidem?
               </p>
             </div>
           </div>
@@ -75,7 +88,10 @@ const FAQ = () => {
                 <LuPlus className="text-[#333333] h-[24px] w-[24px]" />
               </div>
               <p className="leading-relaxed text-base font-normal text-[#4F4F4F]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis modi ullam amet debitis libero veritatis enim repellat optio natus eum delectus deserunt, odit expedita eos molestiae ipsa totam quidem?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                quis modi ullam amet debitis libero veritatis enim repellat
+                optio natus eum delectus deserunt, odit expedita eos molestiae
+                ipsa totam quidem?
               </p>
             </div>
           </div>
@@ -88,14 +104,17 @@ const FAQ = () => {
                 <LuPlus className="text-[#333333] h-[24px] w-[24px]" />
               </div>
               <p className="leading-relaxed text-base font-normal text-[#4F4F4F]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quis modi ullam amet debitis libero veritatis enim repellat optio natus eum delectus deserunt, odit expedita eos molestiae ipsa totam quidem?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                quis modi ullam amet debitis libero veritatis enim repellat
+                optio natus eum delectus deserunt, odit expedita eos molestiae
+                ipsa totam quidem?
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FAQ
+export default FAQ;
