@@ -1,41 +1,46 @@
 "use client";
 import Link from "next/link";
+import HamburgerMenu from "./hamburger";
+
 const Navigation = () => {
   return (
-    <div>
-      {/* navigation div */}
-      <div className="bg-white py-4 sticky top-0 z-10 px-4 sm:px-8 md:px-16 sm:w-fit">
-        <div className="w-full flex items-center justify-between">
-          {/* Left side: Hamburger menu and links */}
-          <div className="flex items-center gap-6">
-            {/* Hamburger Menu */}
-            <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-md">
-            </div>
-
-            {/* Links for larger screens */}
-            <div className="flex items-center gap-10 sm:gap-7">
-              <Link href="/" className="hover:text-[#029FAE] cursor-pointer">
-                Home
-              </Link>
-              <Link href="/about" className="hover:text-[#029FAE] cursor-pointer">
-                About
-              </Link>
-              <Link href="/allProducts" className="hover:text-[#029FAE] cursor-pointer">
-                Product
-              </Link>
-              <Link href="/FAQ" className="hover:text-[#029FAE] cursor-pointer">
-              FAQ
-              </Link>
-              <Link href="/contact" className="hover:text-[#029FAE] cursor-pointer">
-                Contact
-              </Link>
-            </div>
+    <div className="bg-[#FFFFFF] top-0 px-4 sm:px-8 md:px-16 font-[Inter] ">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4 md:gap-8">
+          {/* Hamburger Menu for smaller screens */}
+          <div className="sm:hidden">
+            <HamburgerMenu />
           </div>
 
-          {/* Contact section */}
-          <div className="sm:flex gap-1 text-sm md:text-base whitespace-nowrap md:ml-72 ">
-            <h1 className="text-gray-500 lg:pl-40 pl-36">Contact: (808) 555-0111</h1>
+          {/* Links for larger screens */}
+          <div className="hidden sm:flex items-center gap-4 md:gap-6 lg:gap-8 bg-[#FFFFFF]">
+            <Link href="/" className="hover:text-[#029FAE] cursor-pointer">
+              Home
+            </Link>
+            <Link href="/shop" className="hover:text-[#029FAE] cursor-pointer">
+              Shop
+            </Link>
+            <Link href="/allProducts" className="hover:text-[#029FAE] cursor-pointer">
+              Product
+            </Link>
+            <Link href="/pages" className="hover:text-[#029FAE] cursor-pointer">
+              Pages
+            </Link>
+            <Link href="/about" className="hover:text-[#029FAE] cursor-pointer">
+              About
+            </Link>
           </div>
+        </div>
+
+        {/* Contact section */}
+        <div className="text-sm md:text-base whitespace-nowrap text-right ml-[600px] sm:ml-auto">
+          <Link
+            href="/contact"
+            className="text-[#636270] hover:text-[#029FAE] cursor-pointer font-normal"
+          >
+            Contact:{" "}
+            <span className="text-[#272343] font-medium">(808) 555-0111</span>
+          </Link>
         </div>
       </div>
     </div>

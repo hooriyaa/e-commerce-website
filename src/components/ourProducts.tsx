@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const OurProducts = () => {
   return (
-    <div className="w-[700px] ml-20 sm:ml-0 sm:w-auto sm:mx-0">
+    <div className="w-[700px] ml-20 sm:ml-0 sm:w-auto sm:mx-0 pb-12">
       <section className="text-gray-600 body-font  sm:left-0  mx-auto max-w-7xl ">
         <div className="container px-5 pt-24 mx-auto">
           <h1 className=" text-3xl md:text-xl lg:text-2xl font-semibold font-[Inter] ml-48 sm:ml-[40%] p-6 pb-5 sm:pb-5">

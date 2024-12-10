@@ -54,7 +54,7 @@ export const products: Product[] = [
 
 export default function TopFeatures() {
   return (
-    <div className="container px-4 mx-auto pt-5 max-w-7xl text-gray-600 ml-24 w-[700px] md:w-fit md:ml-auto">
+    <div className="container px-4 mx-auto pt-5 max-w-7xl text-gray-600 ml-24 w-[700px] md:w-full md:ml-auto">
       <h1 className="text-3xl md:text-xl lg:text-2xl font-semibold font-[Inter] text-left p-6 pb-5 sm:pb-5">
         Featured Products
       </h1>

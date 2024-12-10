@@ -11,7 +11,7 @@ import { IoLogoYoutube } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <div className="w-[890px] sm:w-auto sm:mx-0">
+    <div className="w-[890px] sm:w-auto sm:mx-0 pt-14">
         <footer className="text-gray-600 body-font  sm:left-0 ">
       <div className="container px-5  mx-auto">
         <div className="flex flex-wrap md:text-left text-center justify-center order-first">

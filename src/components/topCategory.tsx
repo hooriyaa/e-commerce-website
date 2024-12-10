@@ -1,73 +1,61 @@
 import React from "react";
-import product2 from "/public/images/product5.png";
-import product3 from "/public/images/product6.png";
-import product4 from "/public/images/product7.png";
+import product1 from "/public/images/product5.png";
+import product2 from "/public/images/product6.png";
+import product3 from "/public/images/product7.png";
 import Image from "next/image";
 
 const TopCategory = () => {
   return (
-    <div className="w-[700px] ml-20 sm:ml-0 sm:w-auto sm:mx-0">
-      <section className="text-gray-600 body-font  sm:left-0 ">
-        <div className="container px-5 pt-14 mx-auto">
-          <h1 className=" text-3xl md:text-xl lg:text-2xl font-semibold font-[Inter] text-left  p-6 pb-12">
-            Top categories
+    <div className="mx-auto  text-[Inter] w-full ml-60 sm:ml-auto">
+      <section className="text-gray-600 body-font">
+        <div className="container mx-auto pt-14">
+          <h1 className="text-3xl md:text-2xl font-semibold text-left mb-6 ml-12">
+            Top Categories
           </h1>
-          <div className="container px-5 mx-auto">
-            <div className="flex flex-wrap justify-center items-center -m-4 ">
-              {/* product2*/}
-              <div className="lg:w-1/3 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150">
-                <span className="block relative h-48 rounded overflow-hidden">
-                  <Image
-                    src={product2}
-                    width={600}
-                    height={600}
-                    className="object-contain object-center w-full h-full block"
-                    alt="product1"
-                  />
-                  <h1 className="absolute bottom-0 h-11 left-0 w-full text-[#FFFFFF] bg-[#000000b6]  p-2  text-center">
-                    <p className="text-[12px] font-semibold font-[Inter]">
-                      Wooden Chair
-                    </p>
-                    <p className="font-light text-[9px]">157 Products</p>
-                  </h1>
-                </span>
+          <div className="flex flex-wrap  justify-center gap-4">
+            {/* Wing Chair */}
+            <div className="w-full sm:w-[45%] md:w-[30%] p-4 hover:scale-105 duration-150">
+              <div className="relative h-56 md:h-64 rounded overflow-hidden shadow-md">
+                <Image
+                  src={product1}
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Wing Chair"
+                />
+                <div className="absolute bottom-0 left-0 w-full h-16 text-transparent hover:text-[#FFFFFF] bg-transparent hover:bg-[#000000b6] px-4 py-2 text-white">
+                  <p className="text-sm font-semibold">Wing Chair</p>
+                  <p className="text-xs">3,584 Products</p>
+                </div>
               </div>
-              {/* Product 3 */}
-              <div className="lg:w-1/3 w-1/2 p-4 l hover:scale-105 duration-100 hover:duration-150">
-                <span className="block relative h-48 rounded overflow-hidden">
-                  <Image
-                    src={product3}
-                    width={600}
-                    height={600}
-                    className="object-contain object-center w-full h-full block"
-                    alt="product1"
-                  />
-                  <h1 className="absolute bottom-0 h-11 left-0 w-full text-[#FFFFFF] bg-[#000000b6]  p-2  text-center">
-                    <p className="text-[12px] font-semibold font-[Inter]">
-                      Wing Chair
-                    </p>
-                    <p className="font-light text-[9px]">3,584 Products</p>
-                  </h1>
-                </span>
+            </div>
+            {/* Wooden Chair */}
+            <div className="w-full sm:w-[45%] md:w-[30%] p-4 hover:scale-105 duration-150">
+              <div className="relative h-56 md:h-64 rounded overflow-hidden shadow-md">
+                <Image
+                  src={product2}
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Wooden Chair"
+                />
+                <div className="absolute bottom-0 left-0 w-full h-16 text-transparent hover:text-[#FFFFFF] bg-transparent hover:bg-[#000000b6] px-4 py-2 text-white">
+                  <p className="text-sm font-semibold">Wooden Chair</p>
+                  <p className="text-xs">157 Products</p>
+                </div>
               </div>
-
-              {/* Product 4 */}
-              <div className="lg:w-1/3 w-1/2  p-4 hover:scale-105 duration-100 hover:duration-150">
-                <span className="block relative h-48 rounded overflow-hidden">
-                  <Image
-                    src={product4}
-                    width={600}
-                    height={600}
-                    className="object-contain object-center w-full h-full block"
-                    alt="product1"
-                  />
-                  <h1 className="absolute bottom-0 h-11 left-0 w-full text-[#FFFFFF] bg-[#000000b6]  p-2  text-center">
-                    <p className="text-[12px] font-semibold font-[Inter]">
-                      Desk Chair
-                    </p>
-                    <p className="font-light text-[9px]">154 Products</p>
-                  </h1>
-                </span>
+            </div>
+            {/* Desk Chair */}
+            <div className="w-full sm:w-[45%] md:w-[30%] p-4 hover:scale-105 duration-150">
+              <div className="relative h-56 md:h-64 rounded overflow-hidden shadow-md">
+                <Image
+                  src={product3}
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Desk Chair"
+                />
+                <div className="absolute bottom-0 left-0 w-full h-16 text-transparent hover:text-[#FFFFFF] bg-transparent hover:bg-[#000000b6] px-4 py-2 text-white">
+                  <p className="text-sm font-semibold">Desk Chair</p>
+                  <p className="text-xs">154 Products</p>
+                </div>
               </div>
             </div>
           </div>

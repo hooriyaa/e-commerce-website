@@ -38,7 +38,7 @@ const FeaturedProducts = () => {
             View all
           </a>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 pt-16">
           {products.map((product, index) => (
             <div key={index} className="rounded-lg overflow-hidden flex justify-center flex-col items-center">
               <Image src={product.image} alt={product.name} width={400} height={400} className="w-full h-64 object-contain" />
