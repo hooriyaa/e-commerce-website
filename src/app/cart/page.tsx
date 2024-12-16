@@ -1,18 +1,16 @@
 "use client";
-
 import { useCart } from "@/components/context/CartContext";
-import { Button } from "@/components/ui/button";
+import OrderSummary from "@/components/orderSummary";
 import { CartItem } from "@/components/ui/cart-item";
 import Link from "next/link";
 
 export default function Cart() {
-  const { cart, removeFromCart, updateQuantity, moveToWishlist, totalPrice } =
-    useCart();
+  const { cart, removeFromCart, updateQuantity, moveToWishlist } = useCart();
 
   if (cart.length === 0) {
     return (
-      <main className="flex justify-around ml-auto w-[890px] sm:w-full  ">
-        <div className="min-h-screen flex flex-col items-center mt-28">
+      <main className="flex justify-around ml-auto w-[890px] sm:w-full  pt-16">
+        <div className="min-h-screen flex flex-col items-center mt-12">
           <h2 className="text-2xl font-medium mb-4">Your cart is empty</h2>
           <p className="text-gray-600">
             Add some items to your cart to see them here.
@@ -22,37 +20,14 @@ export default function Cart() {
           </button>
         </div>
         {/* Summary Section */}
-        <div className="p-6 bg-white rounded-lg shadow-sm">
-          <h2 className="text-2xl font-semibold mb-6">Summary</h2>
-          <div className="space-y-4">
-            <div className="flex justify-between">
-              <span className="text-[#111111]">Subtotal</span>
-              <span className="font-medium">${totalPrice.toFixed(2)}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-[#111111]">
-                Estimated Delivery & Handling
-              </span>
-              <span className="font-medium ml-5">Free</span>
-            </div>
-            <div className="border-t my-4"></div>
-            <div className="flex justify-between font-semibold text-lg">
-              <span>Total</span>
-              <span>${totalPrice.toFixed(2)}</span>
-            </div>
-            <div className="border-t my-4"></div>
-          </div>
-          <Button className="mt-6 w-full bg-[#029FAE] text-white py-6 rounded-3xl text-lg font-medium hover:bg-[#02a0aebd]">
-            Member Checkout
-          </Button>
-        </div>
+        <OrderSummary />
       </main>
     );
   }
 
   return (
     <>
-      <section className="min-h-screen bg-gray-50 flex justify-center py-10 text-[Inter] w-[890px] lg:w-full">
+      <section className="min-h-screen bg-gray-50 flex justify-center pt-10 text-[Inter] w-[890px] lg:w-full">
         <main className="container mx-auto px-4 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Bag Section */}
@@ -72,30 +47,7 @@ export default function Cart() {
             </div>
 
             {/* Summary Section */}
-            <div className="p-6 bg-white rounded-lg shadow-sm">
-              <h2 className="text-2xl font-semibold mb-6">Summary</h2>
-              <div className="space-y-4">
-                <div className="flex justify-between">
-                  <span className="text-[#111111]">Subtotal</span>
-                  <span className="font-medium">${totalPrice.toFixed(2)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[#111111]">
-                    Estimated Delivery & Handling
-                  </span>
-                  <span className="font-medium">Free</span>
-                </div>
-                <div className="border-t my-4"></div>
-                <div className="flex justify-between font-semibold text-lg">
-                  <span>Total</span>
-                  <span>${totalPrice.toFixed(2)}</span>
-                </div>
-                <div className="border-t my-4"></div>
-              </div>
-              <Button className="mt-6 w-full bg-[#029FAE] text-white py-6 rounded-3xl text-lg font-medium hover:bg-[#02a0aebd]">
-                Member Checkout
-              </Button>
-            </div>
+            <OrderSummary />
           </div>
         </main>
       </section>
