@@ -1,13 +1,16 @@
-"use client"
+"use client";
+import { toast } from "react-toastify";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { products } from "@/components/allProducts/productGrid";
 import { Button } from "@/components/ui/button";
 import { RiShoppingCartLine } from "react-icons/ri";
 import FeaturedProducts from "@/components/featuresProducts";
+import { useCart } from "@/components/context/CartContext";
 
 export default function ProductDetail() {
   const { id } = useParams();
+  const { addToCart } = useCart();
 
   const productId = Array.isArray(id) ? id[0] : id;
   const product = productId
@@ -17,6 +20,26 @@ export default function ProductDetail() {
   if (!product) {
     return <p className="text-center mt-10">Product not found.</p>;
   }
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+
+    // Show success notification
+    toast.success(`Item Successfully Placed in Your Cart!`, {
+      position: "top-center", 
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true, 
+      pauseOnHover: true, 
+      draggable: true,
+      progress: undefined, 
+    });
+  };
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 w-[850px] sm:w-full">
@@ -41,15 +64,20 @@ export default function ProductDetail() {
             <div className="border"></div>
           </div>
           <p className="text-gray-600 text-base sm:text-lg">
-            {product.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, doloremque deserunt delectus tempora quos quas similique maiore
+            {product.description} Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Architecto, doloremque deserunt delectus tempora quos quas
+            similique maiore
           </p>
-          <Button className="w-full sm:w-auto bg-[#029FAE] hover:bg-teal-600 py-5">
-            <RiShoppingCartLine />
+          <Button
+            onClick={handleAddToCart}
+            className="w-full sm:w-auto bg-[#029FAE] hover:bg-teal-600 py-5"
+          >
+            <RiShoppingCartLine className="mr-2" />
             Add to Cart
           </Button>
         </div>
       </div>
-      <FeaturedProducts/>
+      <FeaturedProducts />
     </div>
   );
 }

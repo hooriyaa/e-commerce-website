@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const FeaturedProducts = () => {
   const products = [
@@ -34,9 +35,9 @@ const FeaturedProducts = () => {
       <div className="container mx-auto">
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-2xl  font-bold font-[Inter] text-[#000000]">Featured Products</h2>
-          <a href="#" className="flex items-center gap-2 hover:underline">
+          <Link href="#" className="flex items-center gap-2 hover:underline">
             View all
-          </a>
+          </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 pt-16">
           {products.map((product, index) => (
