@@ -36,7 +36,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <CartProvider>
-          <main className="bg-background sm:w-full w-[893px]">
+          <div className="max-w-7xl mx-auto max-h-fit">
+          <main className="bg-background sm:w-full w-[893px] ">
             <TopBar />
           </main>
           <Navbar />
@@ -44,6 +45,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ToastContainer />
+          </div>   
         </CartProvider>
       </body>
     </html>
