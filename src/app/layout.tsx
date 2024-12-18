@@ -32,26 +32,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
-       <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <CartProvider>
-          <div className="max-w-7xl mx-auto max-h-fit">
-          <main className="bg-background sm:w-full w-[893px] ">
-            <TopBar />
-          </main>
-          <Navbar />
-          <Navigation />
-          {children}
-          <Footer />
-          <ToastContainer />
-          </div>   
-        </CartProvider>
-      </body>
-    </html>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+    >
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <CartProvider>
+            <div className="max-w-7xl mx-auto max-h-fit">
+              <main className="bg-background sm:w-full w-[893px] ">
+                <TopBar />
+              </main>
+              <Navbar />
+              <Navigation />
+              {children}
+              <Footer />
+              <ToastContainer />
+            </div>
+          </CartProvider>
+        </body>
+      </html>
     </ClerkProvider>
-   
   );
 }
