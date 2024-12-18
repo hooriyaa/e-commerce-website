@@ -8,6 +8,7 @@ import TopBar from "@/components/topBar";
 import { CartProvider } from "@/components/context/CartContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <ClerkProvider dynamic>
+       <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -49,5 +51,7 @@ export default function RootLayout({
         </CartProvider>
       </body>
     </html>
+    </ClerkProvider>
+   
   );
 }

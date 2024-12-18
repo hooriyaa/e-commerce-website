@@ -4,15 +4,20 @@ import { CiSearch } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 import Link from "next/link";
 import { useCart } from "@/components/context/CartContext";
+import { UserButton, useUser } from "@clerk/nextjs";
+import { RiContactsLine } from "react-icons/ri";
 
 const Navbar = () => {
+  const { isSignedIn, user } = useUser();
   const { totalItems } = useCart();
 
   return (
     <div className="bg-[#F0F2F3] py-4 px-4 sm:px-8 md:px-16 w-fit sm:w-full border-y">
-      <div className="w-full flex items-center justify-between gap-40 md:gap-20">
+      <div className="w-full flex items-center justify-between gap-[140px] md:gap-20">
         <div className="flex">
-          <h1 className="text-[20px] font-medium pl-2 font-[Inter]">Comforty</h1>
+          <h1 className="text-[20px] font-medium pl-2 font-[Inter]">
+            Comforty
+          </h1>
         </div>
 
         <div className="flex justify-evenly bg-[#FFFFFF] px-7 py-2 rounded-md gap">
@@ -37,9 +42,21 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="bg-[#FFFFFF] h-[44px] w-[44px] rounded-md p-3">
-            <FaRegHeart className="w-5 h-5 text-sm cursor-pointer" />
-          </div>
+          {!isSignedIn ? (
+            <div className="flex gap-1">
+              <div className="bg-[#FFFFFF] h-[44px] w-[44px] rounded-md p-3">
+                <FaRegHeart className="w-5 h-5 text-sm cursor-pointer" />
+              </div>
+              <div className="bg-[#FFFFFF] h-[44px] w-[44px] rounded-md p-3">
+                <RiContactsLine className="w-5 h-5 text-sm cursor-pointer" />
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center gap-1">
+              <UserButton afterSignOutUrl="/" />
+              <span className="text-sm">{user?.firstName || "Welcome"}</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

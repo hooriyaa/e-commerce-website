@@ -9,7 +9,7 @@ export default function Cart() {
 
   if (cart.length === 0) {
     return (
-      <main className="flex justify-around ml-auto w-[890px] sm:w-full pt-16 pb-20">
+      <div className="flex justify-around ml-auto w-[890px] sm:w-full pt-16 pb-20">
         <div className="flex flex-col items-center mt-12 ">
           <h2 className="text-2xl font-medium mb-4">Your cart is empty</h2>
           <p className="text-gray-600">
@@ -21,14 +21,13 @@ export default function Cart() {
         </div>
         {/* Summary Section */}
         <OrderSummary />
-      </main>
+      </div>
     );
   }
-
   return (
     <>
-      <section className="max-h-7xl bg-gray-50 flex justify-center pt-10 text-[Inter] w-[890px] lg:w-full pb-24">
-        <main className="container mx-auto px-4 lg:px-20">
+      <div className="max-h-7xl bg-gray-50 flex justify-center pt-10 text-[Inter] w-[890px] lg:w-full pb-24">
+        <div className="container mx-auto px-4 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Bag Section */}
             <div className="col-span-2">
@@ -49,8 +48,8 @@ export default function Cart() {
             {/* Summary Section */}
             <OrderSummary />
           </div>
-        </main>
-      </section>
+        </div>
+      </div>
     </>
   );
 }
