@@ -57,7 +57,7 @@ const OrderSummary = () => {
         {!isSignedIn ? (
           <div>
             <SignInButton mode="modal">
-              <Button className="mt-6 w-full bg-[#029FAE] text-white py-6 rounded-3xl text-lg font-medium hover:bg-[#02a0aebd]">
+              <Button className="mt-6 w-full bg-[#029FAE] text-white py-6 rounded-3xl text-lg font-medium hover:bg-[#02abaee6]">
                 Member Checkout
               </Button>
             </SignInButton>
@@ -67,7 +67,7 @@ const OrderSummary = () => {
             <Button
               onClick={handleCheckout}
               disabled={loading}
-              className="mt-6 w-full bg-[#029FAE] text-white py-6 rounded-3xl text-lg font-medium hover:bg-[#02a0ae79]"
+              className="mt-6 w-full bg-[#029FAE] text-white py-6 rounded-3xl text-lg font-medium hover:bg-[#02abaee6]"
             >
               {loading ? "Processing..." : "Member Checkout"}
             </Button>
