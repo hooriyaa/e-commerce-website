@@ -1,12 +1,40 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { useCart } from "./context/CartContext";
 import { SignInButton, useUser } from "@clerk/nextjs";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!);
 
 const OrderSummary = () => {
   const { isSignedIn } = useUser();
   const { totalPrice } = useCart();
+  const [loading, setLading] = useState(false);
+
+  const handleCheckout = async () => {
+    setLading(true);
+
+    try {
+      const response = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ totalPrice }),
+      });
+
+      const session = await response.json();
+      const stripe = await stripePromise;
+      if (stripe) {
+        await stripe.redirectToCheckout({ sessionId: session.id });
+      } else {
+        console.error("Stripe failed to load.");
+      }
+    } catch (error) {
+      console.error("Checkout error:", error);
+    } finally {
+      setLading(false);
+    }
+  };
 
   return (
     <div className="px-6 bg-white rounded-lg shadow-sm">
@@ -27,7 +55,7 @@ const OrderSummary = () => {
         </div>
         <div className="border-t my-4"></div>
         {!isSignedIn ? (
-          <div className="">
+          <div>
             <SignInButton mode="modal">
               <Button className="mt-6 w-full bg-[#029FAE] text-white py-6 rounded-3xl text-lg font-medium hover:bg-[#02a0aebd]">
                 Member Checkout
@@ -35,9 +63,13 @@ const OrderSummary = () => {
             </SignInButton>
           </div>
         ) : (
-          <div className="">
-            <Button className="mt-6 w-full bg-[#029FAE] text-white py-6 rounded-3xl text-lg font-medium hover:bg-[#02a0aebd]">
-              Member Checkout
+          <div>
+            <Button
+              onClick={handleCheckout}
+              disabled={loading}
+              className="mt-6 w-full bg-[#029FAE] text-white py-6 rounded-3xl text-lg font-medium hover:bg-[#02a0ae79]"
+            >
+              {loading ? "Processing..." : "Member Checkout"}
             </Button>
           </div>
         )}

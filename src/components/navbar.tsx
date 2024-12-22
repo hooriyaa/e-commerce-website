@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-[#F0F2F3] py-4 px-4 sm:px-8 md:px-16 w-fit sm:w-full border-y">
-      <div className="w-full flex items-center justify-between gap-[140px] md:gap-20">
+      <div className="w-full flex items-center justify-center lg:justify-between gap-[140px] md:gap-20">
         <div className="flex">
           <h1 className="text-[20px] font-medium pl-2 font-[Inter]">
             Comforty

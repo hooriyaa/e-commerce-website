@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "api/create-checkout-session.ts", "api/cancel.ts"  ],
   "exclude": [
     "node_modules"
   ]

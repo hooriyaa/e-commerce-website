@@ -7,7 +7,7 @@ import TopFeatures from "@/components/topFeatures";
 
 export default function Home() {
   return (
-    <div className="max-w-7xl mx-auto ">
+    <div className="max-w-8xl mx-auto">
      <Hero/>
      <Companylogo/>
      <TopFeatures/>
