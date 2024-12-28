@@ -9,7 +9,7 @@ export default function Cart() {
 
   if (cart.length === 0) {
     return (
-      <div className="flex justify-around ml-auto w-[890px] sm:w-full pt-16 pb-20">
+      <div className="flex justify-around  ml-auto w-[890px] sm:w-full pt-16 pb-20">
         <div className="flex flex-col items-center mt-12 ">
           <h2 className="text-2xl font-medium mb-4">Your cart is empty</h2>
           <p className="text-gray-600">
