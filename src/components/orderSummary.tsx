@@ -37,7 +37,7 @@ const OrderSummary = () => {
   };
 
   return (
-    <div className="px-6 bg-white rounded-lg shadow-sm">
+    <div className="px-6 py-7 bg-white rounded-lg shadow-sm">
       <h2 className="text-2xl font-semibold mb-6">Summary</h2>
       <div className="space-y-4">
         <div className="flex justify-between">
