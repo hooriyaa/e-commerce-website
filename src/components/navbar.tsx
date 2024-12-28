@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useCart } from "@/components/context/CartContext";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { RiContactsLine } from "react-icons/ri";
+import Image from "next/image";
+import logo from "../../public/images/Logo-Icon.png";
 
 const Navbar = () => {
   const { isSignedIn, user } = useUser();
@@ -15,7 +17,8 @@ const Navbar = () => {
     <div className="bg-[#F0F2F3] py-4 px-7 sm:px-8 md:px-16 w-fit sm:w-full border-y ">
       <div className="w-full flex items-center justify-center lg:justify-between gap-[140px] md:gap-20">
         <div className="flex">
-          <h1 className="text-[20px] font-medium pl-2 font-[Inter]">
+          <Image src={logo} width={40} height={40} alt="logo" className="w-[30px] h-[30px]" />
+          <h1 className="text-[20px] text-[#272343] font-medium pl-2 font-[Inter]">
             Comforty
           </h1>
         </div>
@@ -33,7 +36,7 @@ const Navbar = () => {
           <div className="flex gap-2 bg-[#FFFFFF] px-4 py-2 rounded-md whitespace-nowrap">
             <IoCartOutline className="w-6 h-7 cursor-pointer" />
             <Link href="/cart">
-              <h1>
+              <h1 className="text-[#272343] font-medium cursor-pointer">
                 Cart{" "}
                 <span className="text-[#FFFFFF] font-medium bg-[#007580] rounded-full px-2 py-0.5 text-sm">
                   {totalItems}
