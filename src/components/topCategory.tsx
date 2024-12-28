@@ -25,13 +25,13 @@ const TopCategory = async () => {
           <h1 className="text-3xl md:text-2xl font-semibold text-left mb-6 ml-12">
             Top Categories
           </h1>
-          <div className="grid grid-cols-2 md:grid-cols-3 justify-center">
+          <div className="grid grid-cols-2 lg:grid-cols-3 justify-center">
             {data.map((item: Products) => (
               <div
                 key={item.id}
                 className="p-6 pr-5 hover:scale-105 duration-150 group"
               >
-                <div className="relative h-[300px] w-[340px] rounded overflow-hidden shadow-md">
+                <div className="relative h-[300px] w-[340px] md:w-[320px] lg:w-[270px] rounded overflow-hidden shadow-md">
                   <Image
                     src={urlFor(item.image).url()}
                     alt={item.title}
