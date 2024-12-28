@@ -16,7 +16,7 @@ export default async function ChairGallery() {
   return (
     <header className="container mx-auto px-4 py-12 lg:py-16 ml-20 md:ml-0 w-[700px] md:w-full">
       <div className="relative grid grid-cols-1 gap-8 md:grid-cols-[auto_1fr]">
-        <div className="relative lg:w-2/3 hidden md:flex items-center justify-center px-4 lg:px-0">
+        <div className="relative lg:w-2/3 hidden sm:flex items-center justify-center px-4 lg:px-0">
           <h1 className="absolute right-16 lg:left-[10px] top-[90%] -translate-y-[50%] rotate-[-90deg] text-sm lg:text-lg font-bold uppercase tracking-widest text-gray-700 whitespace-nowrap">
             Explore New and Popular Styles
           </h1>
