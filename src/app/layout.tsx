@@ -41,7 +41,7 @@ export default function RootLayout({
         >
           <CartProvider>
             <div className="max-w-7xl mx-auto max-h-fit">
-              <main className="bg-background sm:w-full w-[893px] ">
+              <main className="sm:w-full w-[893px] ">
                 <TopBar />
               </main>
               <Navbar />

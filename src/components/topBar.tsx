@@ -12,15 +12,17 @@ export default function TopBar() {
           $50
         </p>
         <div className="mt-2 md:mt-0 flex font-normal gap-4">
-            <h1 className="flex">
+          <h1 className="flex">
             <option className="text-[#FFFFFF] ">Eng</option>
             <RiArrowDropDownLine className="text-2xl rounded-xl text-[#FFFFFF] pt-1" />
-            </h1>
-        
-          <Link href={"/FAQ"} className="text-[#FFFFFF] ">Faqs</Link>
+          </h1>
+
+          <Link href={"/FAQ"} className="text-[#FFFFFF] ">
+            Faqs
+          </Link>
           <h1 className="flex">
-          <CiCircleAlert className="text-2xl rounded-xl text-[#FFFFFF] pt-1" />
-          <option className="text-[#FFFFFF] ">Need Help</option>
+            <CiCircleAlert className="text-2xl rounded-xl text-[#FFFFFF] pt-1" />
+            <option className="text-[#FFFFFF] ">Need Help</option>
           </h1>
         </div>
       </div>

@@ -1,5 +1,4 @@
 "use client";
-
 import { createContext, useContext, useState, useEffect } from "react";
 
 type CartItem = {
@@ -8,13 +7,11 @@ type CartItem = {
   price: number;
   image: string;
   quantity: number;
-  size?: string;
-  color?: string;
 };
 
 type CartContextType = {
   cart: CartItem[];
-  addToCart: (item: Omit<CartItem, "quantity">) => void;
+  addToCart: (item: CartItem) => void;
   removeFromCart: (id: number) => void;
   updateQuantity: (id: number, quantity: number) => void;
   moveToWishlist: (id: number) => void;
@@ -28,7 +25,6 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>(() => {
-    // Load initial cart state from local storage
     if (typeof window !== "undefined") {
       const storedCart = localStorage.getItem("cart");
       return storedCart ? JSON.parse(storedCart) : [];
@@ -40,23 +36,18 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [totalItems, setTotalItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  // Update totals whenever cart changes
   useEffect(() => {
     const items = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const price = cart.reduce(
-      (sum, item) => sum + item.price * item.quantity,
-      0
-    );
+    const price = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     setTotalItems(items);
     setTotalPrice(price);
-
-    // Save the cart to local storage
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (item: Omit<CartItem, "quantity">) => {
+  const addToCart = (item: CartItem) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((i) => i.id === item.id);
+
       if (existingItem) {
         return prevCart.map((i) =>
           i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
@@ -87,7 +78,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  //  Clear from local storage
   const clearCart = () => {
     setCart([]);
     localStorage.removeItem("cart");

@@ -5,6 +5,7 @@ import { FaRegHeart, FaRegTrashAlt } from "react-icons/fa";
 import { CartItem as CartItemType } from "@/types/cart";
 import { Button } from "@/components/ui/button";
 import { Minus, Plus } from "lucide-react";
+import { urlFor } from "@/sanity/lib/image";
 
 interface CartItemProps {
   item: CartItemType;
@@ -18,7 +19,7 @@ export function CartItem({ item, onRemove, onUpdateQuantity }: CartItemProps) {
     <div className="flex items-center justify-between border-b pb-6 gap-7">
       <div className="flex items-center space-x-4">
         <Image
-          src={item.image}
+          src={urlFor(item.image).url()}
           alt={item.name}
           className="w-20 h-20 object-cover rounded"
           width={400}
@@ -49,30 +50,32 @@ export function CartItem({ item, onRemove, onUpdateQuantity }: CartItemProps) {
           </div>
         </div>
         <div className="flex items-center space-x-2 mt-9 mr-5">
-        <Button
-    size="icon"
-    variant="outline"
-    onClick={() => onUpdateQuantity(item.id, Math.max(1, item.quantity - 1))}
-    disabled={item.quantity <= 1} // Disable if quantity is already 1
-    className="hover:bg-gray-100 disabled:opacity-50"
-  >
-    <Minus className="h-4 w-4 text-[#272343]" />
-  </Button>
+          <Button
+            size="icon"
+            variant="outline"
+            onClick={() =>
+              onUpdateQuantity(item.id, Math.max(1, item.quantity - 1))
+            }
+            disabled={item.quantity <= 1} // Disable if quantity is already 1
+            className="hover:bg-gray-100 disabled:opacity-50"
+          >
+            <Minus className="h-4 w-4 text-[#272343]" />
+          </Button>
 
-  {/* Quantity Display */}
-  <span className="w-8 text-center">
-    {item.quantity}
-  </span>
+          {/* Quantity Display */}
+          <span className="w-8 text-center">{item.quantity}</span>
 
-  {/* Plus Button */}
-  <Button
-    size="icon"
-    variant="outline"
-    onClick={() => onUpdateQuantity(item.id, Math.min(50, item.quantity + 1))}
-    className="hover:bg-gray-100"
-  >
-    <Plus className="h-4 w-4 text-[#272343]" />
-  </Button>
+          {/* Plus Button */}
+          <Button
+            size="icon"
+            variant="outline"
+            onClick={() =>
+              onUpdateQuantity(item.id, Math.min(50, item.quantity + 1))
+            }
+            className="hover:bg-gray-100"
+          >
+            <Plus className="h-4 w-4 text-[#272343]" />
+          </Button>
         </div>
       </div>
       <p className="text-base font-normal text-[#111111] pr-10">

@@ -24,7 +24,10 @@ export default function Contact() {
             <FaLocationDot size={21} className=" mb-12" />
             <div>
               <h2 className="font-semibold font-[Poppins]">Address</h2>
-              <p>236 5th SE Avenue, New <br></br> York NY10000, United <br></br> States</p>
+              <p>
+                236 5th SE Avenue, New <br></br> York NY10000, United <br></br>{" "}
+                States
+              </p>
             </div>
           </div>
 
@@ -104,7 +107,7 @@ export default function Contact() {
       </div>
 
       {/* Footer Info */}
-<ContactInfo/>
+      <ContactInfo />
     </div>
   );
 }
