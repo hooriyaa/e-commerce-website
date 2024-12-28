@@ -14,7 +14,7 @@ const Navbar = () => {
   const { totalItems } = useCart();
 
   return (
-    <div className="bg-[#F0F2F3] py-4 px-7 sm:px-8 md:px-16 w-fit sm:w-full border-y ">
+    <div className="bg-[#F0F2F3] py-4 px-7 sm:px-8 md:px-16 w-fit sm:w-full border-y font-[Inter]">
       <div className="w-full flex items-center justify-center lg:justify-between gap-[140px] md:gap-20">
         <div className="flex">
           <Image src={logo} width={40} height={40} alt="logo" className="w-[30px] h-[30px]" />
@@ -38,7 +38,7 @@ const Navbar = () => {
             <Link href="/cart">
               <h1 className="text-[#272343] font-medium cursor-pointer">
                 Cart{" "}
-                <span className="text-[#FFFFFF] font-medium bg-[#007580] rounded-full px-2 py-0.5 text-sm">
+                <span className="text-[#FFFFFF] font-medium bg-[#007580] rounded-full px-2 py-1 text-sm">
                   {totalItems}
                 </span>
               </h1>
