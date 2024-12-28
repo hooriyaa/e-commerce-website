@@ -15,12 +15,14 @@ interface CartItemProps {
 }
 
 export function CartItem({ item, onRemove, onUpdateQuantity }: CartItemProps) {
+  const imageUrl = item.image ? urlFor(item.image)?.url() : "/placeholder.jpg";
+
   return (
     <div className="flex items-center justify-between border-b pb-6 gap-7">
       <div className="flex items-center space-x-4">
         <Image
-          src={urlFor(item.image).url()}
-          alt={item.name}
+          src={imageUrl}
+          alt={item.name || "Product Image"}
           className="w-20 h-20 object-cover rounded"
           width={400}
           height={400}
@@ -53,25 +55,17 @@ export function CartItem({ item, onRemove, onUpdateQuantity }: CartItemProps) {
           <Button
             size="icon"
             variant="outline"
-            onClick={() =>
-              onUpdateQuantity(item.id, Math.max(1, item.quantity - 1))
-            }
-            disabled={item.quantity <= 1} // Disable if quantity is already 1
+            onClick={() => onUpdateQuantity(item.id, Math.max(1, item.quantity - 1))}
+            disabled={item.quantity <= 1}
             className="hover:bg-gray-100 disabled:opacity-50"
           >
             <Minus className="h-4 w-4 text-[#272343]" />
           </Button>
-
-          {/* Quantity Display */}
           <span className="w-8 text-center">{item.quantity}</span>
-
-          {/* Plus Button */}
           <Button
             size="icon"
             variant="outline"
-            onClick={() =>
-              onUpdateQuantity(item.id, Math.min(50, item.quantity + 1))
-            }
+            onClick={() => onUpdateQuantity(item.id, Math.min(50, item.quantity + 1))}
             className="hover:bg-gray-100"
           >
             <Plus className="h-4 w-4 text-[#272343]" />
