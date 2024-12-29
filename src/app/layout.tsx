@@ -41,11 +41,11 @@ export default function RootLayout({
         >
           <CartProvider>
             <div className="max-w-7xl mx-auto max-h-fit">
-              <main className="sm:w-full w-[897px] ">
+              <main className="sm:w-full w-[900px] ">
                 <TopBar />
+                <Navbar />
+                <Navigation />
               </main>
-              <Navbar />
-              <Navigation />
               {children}
               <Footer />
               <ToastContainer />
