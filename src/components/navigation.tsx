@@ -33,7 +33,7 @@ const Navigation = () => {
         </div>
 
         {/* Contact section */}
-        <div className="text-sm md:text-base whitespace-nowrap text-right ml-[600px] sm:ml-auto">
+        <div className="text-base md:text-base whitespace-nowrap text-right ml-[600px] sm:ml-auto">
           <Link
             href="/contact"
             className="text-[#636270] hover:text-[#029FAE] cursor-pointer font-normal"

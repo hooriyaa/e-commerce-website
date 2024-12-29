@@ -9,7 +9,7 @@ import logo7 from "/public/images/Logo7.png";
 
 const Companylogo = () => {
   return (
-    <div className="bg-white flex flex-wrap items-center justify-evenly sm:w-full md:w-[73%]  mx-auto ">
+    <div className="bg-white flex flex-wrap items-center justify-evenly sm:w-full md:w-[73%] mx-auto px-5">
     <div className="flex items-center justify-center mt-20 ml-80 sm:ml-0 gap-10 sm:gap-15">
       <Image width={700} height={700} alt='logo1' src={logo1} className='h-20 w-20'/>
         <Image width={700} height={700} alt='logo1' src={logo2} className='h-20 w-20'/>

@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-[#F0F2F3] py-4 px-7 sm:px-8 md:px-16 w-fit sm:w-full border-y font-[Inter]">
-      <div className="w-full flex items-center justify-center lg:justify-between gap-[140px] md:gap-20">
+      <div className="w-full flex items-center justify-center lg:justify-between gap-[107px]  md:gap-14">
         <div className="flex">
           <Image src={logo} width={40} height={40} alt="logo" className="w-[30px] h-[30px]" />
           <h1 className="text-[20px] text-[#272343] font-medium pl-2 font-[Inter]">

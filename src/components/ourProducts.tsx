@@ -36,7 +36,7 @@ const OurProducts = async () => {
               {data.map((product: Products) => (
                 <div
                   key={product.id}
-                  className="lg:w-1/4 md:w-1/3 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150"
+                  className="xl:w-1/4 md:w-1/3 w-1/2 p-4 hover:scale-105 duration-100 hover:duration-150"
                 >
                   <span className="block relative h-60 rounded overflow-hidden">
                     {" "}
