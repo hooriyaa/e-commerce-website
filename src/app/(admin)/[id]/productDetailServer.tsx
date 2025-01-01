@@ -7,7 +7,7 @@ export default async function ProductDetailServer({
   params: { id: string };
 }) {
   const data = await client.fetch(
-    `*[_type == "Products" && id == ${params.id}][0]{
+    `*[_type in ["Products", "featuredProducts", "ourProducts"] && id == ${params.id}][0]{
       id,
       name,
       price,

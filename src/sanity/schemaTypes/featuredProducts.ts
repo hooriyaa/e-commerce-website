@@ -19,7 +19,7 @@ export const FeaturedProducts = defineType({
     defineField({
       name: "price",
       title: "Price",
-      type: "string",
+      type: "number",
       description: "The price of the product",
     }),
     defineField({
