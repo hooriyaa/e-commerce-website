@@ -1,3 +1,4 @@
+"use client"
 import TopCategory from "@/components/topCategory";
 
 const Topcategory = () => {
