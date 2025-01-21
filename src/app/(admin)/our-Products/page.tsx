@@ -1,18 +1,10 @@
 import OurProducts from "@/components/ourProducts";
-import React, { Suspense } from "react";
+import React from "react";
 
 const OurProduct = () => {
   return (
     <div>
-      <Suspense
-        fallback={
-          <div className="flex justify-center items-center p-12">
-            Loading...
-          </div>
-        }
-      >
-        <OurProducts />
-      </Suspense>
+      <OurProducts />
     </div>
   );
 };
