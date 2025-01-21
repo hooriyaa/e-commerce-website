@@ -4,7 +4,6 @@ import OurProducts from "@/components/ourProducts";
 import TopCategory from "@/components/topCategory";
 import ChairGallery from "@/components/chairGallery";
 import TopFeatures from "@/components/topFeatures";
-import { Suspense } from "react";
 
 export default function Home() {
   return (
