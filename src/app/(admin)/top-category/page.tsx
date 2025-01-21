@@ -1,4 +1,3 @@
-"use client"
 import TopCategory from "@/components/topCategory";
 import { Suspense } from "react";
 
