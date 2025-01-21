@@ -4,11 +4,16 @@ import { Suspense } from "react";
 const Topcategory = () => {
   return (
     <div>
-         <Suspense fallback={<div>Loading...</div>}>
-       <TopCategory />
-       </Suspense>
+      <Suspense
+        fallback={
+          <div className="flex justify-center items-center p-12">
+            Loading...
+          </div>
+        }
+      >
+        <TopCategory />
+      </Suspense>
     </div>
-
   );
 };
 

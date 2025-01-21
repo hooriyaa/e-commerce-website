@@ -4,7 +4,13 @@ import React, { Suspense } from "react";
 const OurProduct = () => {
   return (
     <div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="flex justify-center items-center p-12">
+            Loading...
+          </div>
+        }
+      >
         <OurProducts />
       </Suspense>
     </div>
