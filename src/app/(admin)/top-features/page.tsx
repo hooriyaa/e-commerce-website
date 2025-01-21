@@ -1,10 +1,12 @@
 import TopFeatures from "@/components/topFeatures";
-import React from "react";
+import React, { Suspense } from "react";
 
 const Topfeatures = () => {
   return (
     <div>
+        <Suspense fallback={<div>Loading...</div>}>
         <TopFeatures />
+        </Suspense>
     </div>
   );
 };
