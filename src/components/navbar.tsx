@@ -69,7 +69,7 @@ const Navbar = () => {
                   )}
                 </Link>
               </div>
-              <div className="bg-[#FFFFFF] h-[44px] w-[44px] rounded-md p-3">
+              <div className="bg-[#FFFFFF] h-[44px] w-[44px] rounded-md p-3 ml-7">
                 <RiContactsLine className="w-5 h-5 text-sm cursor-pointer" />
               </div>
             </div>
