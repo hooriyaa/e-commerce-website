@@ -6,24 +6,26 @@ import { urlFor } from "@/sanity/lib/image";
 
 type Products = {
   id: string;
-  name: string;
+  title: string;
   image: string;
   price: number;
-  oldPrice?: number;
-  tag?: string;
+  priceWithoutDiscount?: number;
+  badge?: string;
 };
 
 export default async function TopFeatures() {
-  const data = await client.fetch(`*[_type=="featuredProducts"]{
+  const data = await client.fetch(`*[_type=="products"][4...8]{
     id,
-    name,
-    image,
+    title,
     price,
-    oldPrice,
-    tag
+    priceWithoutDiscount,
+    badge,
+    description,
+    inventory,
+    image,
 }`);
   return (
-    <div className="container px-4 mx-auto pt-5 max-w-7xl text-gray-600 ml-24 w-[700px] md:w-full md:ml-auto">
+    <div id="top-features" className="container px-4 mx-auto pt-5 max-w-7xl text-gray-600 ml-24 w-[700px] md:w-full md:ml-auto">
       <h1 className="text-3xl md:text-xl lg:text-2xl font-semibold font-[Inter] text-left p-6 pb-5 sm:pb-5">
         Featured Products
       </h1>
@@ -34,29 +36,29 @@ export default async function TopFeatures() {
               <div className="relative">
                 <Image
                   src={urlFor(product.image).url()}
-                  alt={product.name}
+                  alt={product.title}
                   className="object-cover object-center w-full h-auto block max-w-full"
                   width={300}
                   height={300}
                 />
-                {product.tag && (
+                {product.badge && (
                   <span
-                    className={`absolute top-2 left-2 text-sm font-semibold px-2 py-1 rounded text-white ${product.tag === "New" ? "bg-[#01AD5A]" : "bg-[#F5813F]"}`}
+                    className={`absolute top-2 left-2 text-sm font-semibold px-2 py-1 rounded text-white ${product.badge === "New" ? "bg-[#01AD5A]" : "bg-[#F5813F]"}`}
                   >
-                    {product.tag}
+                    {product.badge}
                   </span>
                 )}
               </div>
               <div className="p-4">
                 <h3 className="text-[#029FAE] font-normal text-base tracking-widest title-font mb-1">
-                  {product.name}
+                  {product.title}
                 </h3>
                 <div className="flex items-center justify-between mt-2">
                   <div className="mb-3 flex justify-between items-center font-[Inter]">
                     <p className="mt-1">${product.price}</p>
-                    {product.oldPrice && (
+                    {product.priceWithoutDiscount && (
                       <span className="text-gray-500 line-through text-sm ml-2 pt-1">
-                        ${product.oldPrice}
+                        ${product.priceWithoutDiscount}
                       </span>
                     )}
                   </div>

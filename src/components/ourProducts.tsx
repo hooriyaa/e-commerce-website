@@ -7,27 +7,31 @@ import { urlFor } from "@/sanity/lib/image";
 
 type Products = {
   id: string;
-  name: string;
+  title: string;
   image: string;
   price: number;
-  oldPrice?: number;
-  tag?: string;
+  priceWithoutDiscount?: number;
+  inventory:string
+  description:string
+  badge?: string;
 };
 
 const OurProducts = async () => {
-  const data = await client.fetch(`*[_type=="ourProducts"]{
-      id,
-      name,
-      image,
-      price,
-      oldPrice,
-      tag,
+  const data = await client.fetch(`*[_type=="products" && "ourProducts" in tags][0...8]{
+     id,
+    title,
+    price,
+    priceWithoutDiscount,
+    badge,
+    description,
+    inventory,
+    image,
   }`);
 
   return (
-    <div className="w-[720px] ml-20 sm:ml-0 sm:w-auto sm:mx-0 pb-12">
+    <div id="our-products" className="w-[720px] ml-20 sm:ml-0 sm:w-auto sm:mx-0 pb-12">
       <section className="text-gray-600 body-font sm:left-0 mx-auto max-w-7xl">
-        <div className="container px-5 pt-24 mx-auto">
+        <div className="container px-5 pt-3 mx-auto">
           <h1 className="text-3xl md:text-xl lg:text-2xl font-semibold font-[Inter] ml-48 sm:ml-[40%] p-6 pb-14">
             Our Products
           </h1>
@@ -41,15 +45,15 @@ const OurProducts = async () => {
                   <span className="block relative h-60 rounded overflow-hidden">
                     {" "}
                     {/* Increased height */}
-                    {product.tag && (
+                    {product.badge && (
                       <span
                         className={`absolute top-2 left-2 text-sm font-semibold px-2 py-1 rounded text-white ${
-                          product.tag === "New"
+                          product.badge === "New"
                             ? "bg-[#01AD5A]"
                             : "bg-[#F5813F]"
                         }`}
                       >
-                        {product.tag}
+                        {product.badge}
                       </span>
                     )}
                     <Link
@@ -62,7 +66,7 @@ const OurProducts = async () => {
                         width={600}
                         height={900}
                         className="object-cover object-center w-full h-full block"
-                        alt={`${product.name}`}
+                        alt={`${product.title}`}
                       />
                     </Link>
                   </span>
@@ -70,10 +74,17 @@ const OurProducts = async () => {
                     <div>
                       <Link key={product.id} href={`/${product.id}`}>
                         <h3 className="text-[#007580] font-medium text-sm tracking-widest title-font mb-1 hover:underline">
-                          {product.name}
+                          {product.title}
                         </h3>
                       </Link>
-                      <p className="mt-1 text-[#272343]">${product.price}</p>
+                      <div className="mb-3 flex justify-start items-center font-[Inter]">
+                    <p className="mt-1">${product.price}</p>
+                    {product.priceWithoutDiscount && (
+                      <span className="text-gray-500 line-through text-sm ml-2 pt-1">
+                        ${product.priceWithoutDiscount}
+                      </span>
+                    )}
+                  </div>
                     </div>
                     <IoCartOutline className="text-[#272343] text-4xl bg-[#F0F2F3] rounded-md p-2 border-none hover:bg-[#029FAE] hover:text-[#FFFFFF]" />
                   </div>

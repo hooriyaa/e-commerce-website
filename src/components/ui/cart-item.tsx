@@ -18,7 +18,7 @@ export function CartItem({ item, onRemove, onUpdateQuantity }: CartItemProps) {
     <div className="flex items-center justify-between border-b pb-6 gap-7">
       <div className="flex items-center space-x-4">
         <Image
-          src={(item.image)} 
+          src={item.image}
           alt={item.name}
           className="w-20 h-20 object-cover rounded"
           width={400}
@@ -48,6 +48,13 @@ export function CartItem({ item, onRemove, onUpdateQuantity }: CartItemProps) {
             </button>
           </div>
         </div>
+        <p
+            className={`text-sm mt-8 animate-bounce animate-infinite animate-duration-1000 animate-delay-[2ms] animate-ease-in ${
+              item.stock > 0 ? "text-[#01AD5A]" : "text-red-600"
+            }`}
+          >
+            {`${item.stock} items in stock`}
+          </p>
         <div className="flex items-center space-x-2 mt-9 mr-5">
           <Button
             size="icon"
@@ -69,9 +76,10 @@ export function CartItem({ item, onRemove, onUpdateQuantity }: CartItemProps) {
             size="icon"
             variant="outline"
             onClick={() =>
-              onUpdateQuantity(item.id, Math.min(50, item.quantity + 1))
+              onUpdateQuantity(item.id, Math.min(item.stock, item.quantity + 1))
             }
-            className="hover:bg-gray-100"
+            disabled={item.quantity >= item.stock} // Disable if quantity reaches stock limit
+            className="hover:bg-gray-100 disabled:opacity-50"
           >
             <Plus className="h-4 w-4 text-[#272343]" />
           </Button>
