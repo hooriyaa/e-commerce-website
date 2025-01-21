@@ -9,14 +9,12 @@ import { Suspense } from "react";
 export default function Home() {
   return (
     <div className="max-w-8xl mx-auto">
-      <Suspense fallback={<div>Loading...</div>}>
         <Hero />
         <Companylogo />
         <TopFeatures />
         <TopCategory />
         <ChairGallery />
         <OurProducts />
-      </Suspense>
     </div>
   );
 }
