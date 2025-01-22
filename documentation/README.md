@@ -84,6 +84,7 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 
 •Users can sign up, log in, and manage their profiles.
 
+
 ## ✨Application Workflow:
 ## ➡️Home Page:
 •Displays a responsive product listing with advanced category filters.
@@ -126,7 +127,8 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 •Displays a success message with order details and shipping information.
 
 
-**Product Data Structure**
+
+## Product Data Structure:
 Managed via Sanity CMS:
 
 [{
