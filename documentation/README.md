@@ -85,43 +85,43 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 •Users can sign up, log in, and manage their profiles.
 
 ## ✨Application Workflow:
-## Home Page:
+## ➡️Home Page:
 •Displays a responsive product listing with advanced category filters.
 
 •Users can browse sofas, chairs, and stools.
 
-## Product Detail Page:
+## ➡️Product Detail Page:
 
 •Shows detailed product information, including reviews and ratings.
 
 •Users can add products to the cart or wishlist.
 
-## Cart:
+## ➡️Cart:
 
 •Displays selected products with their quantities and total price.
 
 •Users must be signed in to proceed to payment.
 
-## Checkout:
+## ➡️Checkout:
 
 •Collects shipping details and calculates shipping rates using ShipEngine.
 
 •Users must be signed in to proceed to payment.
 
-## Payment:
+## ➡️Payment:
 
 •Processes payments securely using Stripe.
 
 •Users must be signed in to complete the payment.
 
 
-## Shipment Page:
+## ➡️Shipment Page:
 
 •Displays shipping details and allows users to confirm their shipment information.
 
 •Provides an option to track the order using ShipEngine.
 
-## Order Confirmation:
+## ➡️Order Confirmation:
 
 •Displays a success message with order details and shipping information.
 
@@ -129,7 +129,7 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 **Product Data Structure**
 Managed via Sanity CMS:
 
-**{
+[{
   "ID": "string",
   "Name": "string",
   "Old Price": "number",
@@ -139,15 +139,18 @@ Managed via Sanity CMS:
   "Description": "string",
   "Image": "string (URL)",
   "Rating": "number (1-5)"
-}
-**
+}]
 
 
-✨## Technologies Used
+## Technologies Used:✅
 •Frontend: React.js, Tailwind CSS
+
 •Backend: Sanity CMS
+
 •Authentication: Clerk
+
 •Shipping: ShipEngine
+
 •Payments: Stripe
 
 
