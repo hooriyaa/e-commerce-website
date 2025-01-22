@@ -24,7 +24,8 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 
 •Clerk: Used for user authentication and profile management.
 
-## User Interface Workflow:
+
+## ✨User Interface Workflow:
 
 ## Home Page (localhost:3000/)
 •Displays a list of products fetched from Sanity CMS.
@@ -33,6 +34,7 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 
 •Users can click on a product to navigate to its detail page.
 
+
 ## Product Detail Page (localhost:3000/product/:id)
 
 •Displays detailed information about a specific product, including:
@@ -40,6 +42,7 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 •Name, Image, Old Price, New Price, Description, Stock, and Rating.
 
 •Allows users to add the product to the cart or wishlist.
+
 
 ## Cart (localhost:3000/cart)
 
@@ -53,11 +56,13 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 
 •Users must be signed in to proceed to payment.
 
+
 ## Payment Page (localhost:3000/cart/payment)
 
 •Processes payments securely using Stripe.
 
 •Users must be signed in to complete the payment.
+
 
 ## Shipment Page (localhost:3000/shipment)
 
@@ -65,11 +70,13 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 
 •Provides an option to track the order using ShipEngine.
 
+
 ## Wishlist (localhost:3000/wishlist)
 
 •Displays products saved by the user for future reference.
 
 •Users can move items from the wishlist to the cart.
+
 
 ## User Authentication (localhost:3000/login)
 
@@ -77,7 +84,7 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 
 •Users can sign up, log in, and manage their profiles.
 
-✨## Application Workflow:
+## ✨Application Workflow:
 ## Home Page:
 •Displays a responsive product listing with advanced category filters.
 
