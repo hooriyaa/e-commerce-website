@@ -5,11 +5,12 @@ import TopCategory from "@/components/topCategory";
 import ChairGallery from "@/components/chairGallery";
 import TopFeatures from "@/components/topFeatures";
 import { Suspense } from "react";
+import Loader from "@/components/Loader";
 
 export default function Home() {
   return (
     <div className="max-w-8xl mx-auto">
-      <Suspense fallback={<div>Loading...</div>}>
+     <Suspense fallback={<Loader />}>
         <Hero />
         <Companylogo />
         <TopFeatures />

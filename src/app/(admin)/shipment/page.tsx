@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Address, Rate, trackingObjType } from "../../../../type";
 import { cartProductsWhichCanBeShipped } from "../../../../data";
 
-// don't judge frontend code i have build it to uderstand shipengine api 😁
 
 const ShippingRatesPage = () => {
   // to ship address
@@ -212,7 +211,7 @@ const ShippingRatesPage = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 disabled:bg-gray-400"
+            className="px-4 py-2 rounded-md disabled:bg-gray-400 w-full bg-[#029FAE] text-[#ffffff] font-medium hover:bg-[#02abaee6]"
           >
             {loading ? "Calculating..." : "Get Shipping Rates"}
           </button>
@@ -230,7 +229,7 @@ const ShippingRatesPage = () => {
                   key={rate.rateId}
                   className={`p-4 border rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer ${
                     rateId === rate.rateId
-                      ? "border-blue-500 bg-blue-100"
+                      ? "border-[#029FAE] bg-blue-100"
                       : "border-gray-200 bg-gray-50"
                   }`}
                   onClick={() => setrateId(rate.rateId)}
@@ -241,7 +240,7 @@ const ShippingRatesPage = () => {
                       name="shippingRate"
                       checked={rateId === rate.rateId}
                       onChange={() => setrateId(rate.rateId)}
-                      className="form-radio h-4 w-4 text-blue-500"
+                      className="form-radio h-4 w-4 text-[#029FAE]"
                     />
                     <div>
                       <p className="text-lg font-medium text-gray-700">
@@ -251,7 +250,7 @@ const ShippingRatesPage = () => {
                         <strong>Service:</strong> {rate.serviceType}
                       </p>
                       <p className="text-gray-800 font-semibold">
-                        <strong>Cost:</strong> {rate.shippingAmount.amount}{" "}
+                        <strong>Cost:</strong > {rate.shippingAmount.amount}{" "}
                         {rate.shippingAmount.currency}
                       </p>
                     </div>
@@ -268,14 +267,14 @@ const ShippingRatesPage = () => {
             <button
               onClick={handleCreateLabel}
               disabled={loading}
-              className="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:bg-gray-400"
+              className="w-full px-4 py-2  rounded-md bg-[#029FAE] text-[#ffffff] font-medium hover:bg-[#02abaee6] disabled:bg-gray-400"
             >
               {loading ? "Creating Label..." : "Create Label"}
             </button>
           </div>
         )}
         {labelPdf && (
-         <Link target="_blank" href={labelPdf}> <button className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Download Label</button></Link>
+         <Link target="_blank" href={labelPdf}> <button className="w-full mt-4 px-4 py-2 bg-[#F5813F] text-[#ffffff] font-medium rounded-md hover:bg-[#f5823fe8]">Download Label</button></Link>
         )}
         {trackingObj && (
           <div className="mt-8">
@@ -286,7 +285,7 @@ const ShippingRatesPage = () => {
             <p> labelId: {trackingObj.labelId}</p>
             <p> carrierCode: {trackingObj.carrierCode}</p>
             <Link href={`/tracking/?labelId=${trackingObj.labelId}`}>
-              <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Track Order</button>
+              <button className="px-4 py-2 rounded-md my-3 bg-[#029FAE] text-[#ffffff] font-medium hover:bg-[#02abaee6] ">Track Order</button>
             </Link>
           </div>
         )}

@@ -74,14 +74,14 @@ function TrackShipment() {
               id="labelId"
               value={labelId}
               onChange={(e) => setLabelId(e.target.value)}
-              className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#029FAE]"
               placeholder="Enter label ID"
               required
             />
             <button
               type="submit"
               disabled={loading}
-              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors disabled:bg-blue-300"
+              className=" transition-colors disabled:bg-[#7BD3EA] px-4 py-2 rounded-md  w-full bg-[#029FAE] text-[#ffffff] font-medium hover:bg-[#02abaee6]"
             >
               {loading ? "Tracking..." : "Track Shipment"}
             </button>

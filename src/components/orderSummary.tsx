@@ -19,18 +19,6 @@ const OrderSummary = () => {
         localStorage.getItem("cart") || "[]"
       );
   
-      // Call the update-inventory API
-      const inventoryResponse = await fetch("/api/update-inventory", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cartItems }),
-      });
-  
-      if (!inventoryResponse.ok) {
-        const errorData = await inventoryResponse.json();
-        throw new Error(errorData.message || "Inventory update failed.");
-      }
-  
       // Call the Stripe checkout session API
       const sessionResponse = await fetch("/api/create-checkout-session", {
         method: "POST",
@@ -61,8 +49,7 @@ const OrderSummary = () => {
     } finally {
       setLading(false); // Reset loading state
     }
-  };
-  
+  }; 
 
   return (
     <div className="px-6 py-7 bg-white rounded-lg shadow-sm">

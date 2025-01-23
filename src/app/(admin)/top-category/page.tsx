@@ -1,16 +1,11 @@
+import Loader from "@/components/Loader";
 import TopCategory from "@/components/topCategory";
 import { Suspense } from "react";
 
 const Topcategory = () => {
   return (
-    <div>
-      <Suspense
-        fallback={
-          <div className="flex justify-center items-center p-12">
-            Loading...
-          </div>
-        }
-      >
+    <div className="pb-12 pt-2">
+       <Suspense fallback={<Loader />}>
         <TopCategory />
       </Suspense>
     </div>
