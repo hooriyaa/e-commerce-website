@@ -9,7 +9,7 @@ import Loader from "@/components/Loader";
 
 export default function Home() {
   return (
-    <div  className="max-w-8xl mx-auto">
+    <div className="max-w-8xl mx-auto">
      <Suspense fallback={<Loader />}>
         <Hero/>
         </Suspense>
