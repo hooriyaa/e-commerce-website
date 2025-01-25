@@ -9,7 +9,7 @@ const sanityClient = createClient({
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
   apiVersion: "2023-01-01",
   token: process.env.NEXT_PUBLIC_SANITY_AUTH_TOKEN,
-  useCdn: false,
+  useCdn: false, 
 });
 
 interface Review {
