@@ -53,7 +53,7 @@ function TrackShipment() {
   }, [queryLabelId, handleSubmit]); // Add handleSubmit to dependencies
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 text-black">
+    <div className="min-h-screen bg-gray-100 text-black mt-6 py-14 px-28 sm:px-6 lg:px-8 w-[850px] sm:w-full mx-auto max-w-7xl ">
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-3xl font-bold text-center mb-8">Track Your Shipment</h1>
 

@@ -90,7 +90,7 @@ const ShippingRatesPage = () => {
   };
 
   return (
-    <div className="min-h-screen text-black bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen text-black bg-gray-100 mt-6 py-14 px-28 sm:px-6 lg:px-8 w-[850px] sm:w-full mx-auto max-w-7xl ">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">
           Shipping Rates Calculator
