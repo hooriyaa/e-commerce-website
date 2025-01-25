@@ -2,16 +2,29 @@
 import { FaStar, FaEdit, FaTrash } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import { createClient } from "next-sanity";
+
+const sanityClient = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  apiVersion: "2023-01-01",
+  token: process.env.NEXT_PUBLIC_SANITY_AUTH_TOKEN,
+  useCdn: false,
+});
 
 interface Review {
-  id: string;
+  _id: string;
   user: string;
   rating: number;
   comment: string;
   date: string;
 }
 
-export default function ReviewSection() {
+interface ReviewSectionProps {
+  currentProductId: number;
+}
+
+export default function ReviewSection({ currentProductId }: ReviewSectionProps) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [userReview, setUserReview] = useState({
     user: "",
@@ -25,13 +38,21 @@ export default function ReviewSection() {
     comment: "",
   });
 
+  // Fetch reviews for the specific product
   useEffect(() => {
-    // Load reviews from localStorage on component mount
-    const storedReviews = localStorage.getItem("reviews");
-    if (storedReviews) {
-      setReviews(JSON.parse(storedReviews));
-    }
-  }, []);
+    const fetchReviews = async () => {
+      try {
+        const query = `*[_type == "review" && productId == $productId] | order(date desc)`;
+        const data = await sanityClient.fetch(query, { productId: currentProductId });
+        setReviews(data);
+      } catch (error) {
+        console.error("Failed to fetch reviews:", error);
+        toast.error("Unable to load reviews. Please try again later.");
+      }
+    };
+
+    fetchReviews();
+  }, [currentProductId]);
 
   const handleRatingChange = (rating: number) => {
     setUserReview((prev) => ({ ...prev, rating }));
@@ -45,7 +66,7 @@ export default function ReviewSection() {
     setUserReview((prev) => ({ ...prev, user: e.target.value }));
   };
 
-  const handleSubmitReview = () => {
+  const handleSubmitReview = async () => {
     if (userReview.rating === 0 || userReview.comment.trim() === "" || userReview.user.trim() === "") {
       toast.error("Please provide your name, a rating, and a comment before submitting.", {
         position: "top-center",
@@ -55,27 +76,45 @@ export default function ReviewSection() {
     }
 
     const newReview = {
-      id: Date.now().toString(),
-      ...userReview,
-      date: new Date().toLocaleString(),
+      _type: "review",
+      user: userReview.user,
+      rating: userReview.rating,
+      comment: userReview.comment,
+      date: new Date().toISOString(),
+      productId: currentProductId, // Add the product ID here
     };
 
-    const updatedReviews = [...reviews, newReview];
-    setReviews(updatedReviews);
+    try {
+      const createdReview = await sanityClient.create(newReview);
+      setReviews((prev) => [createdReview, ...prev]);
+      setUserReview({ user: "", rating: 0, comment: "" });
 
-    // Save to localStorage
-    localStorage.setItem("reviews", JSON.stringify(updatedReviews));
+      toast.success("Thank you for your review!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+    } catch (error) {
+      console.error("Failed to submit review:", error);
+      toast.error("Unable to submit your review. Please try again.");
+    }
+  };
 
-    setUserReview({ user: "", rating: 0, comment: "" });
-
-    toast.success("Thank you for your review!", {
-      position: "top-center",
-      autoClose: 3000,
-    });
+  const handleDeleteClick = async (id: string) => {
+    try {
+      await sanityClient.delete(id);
+      setReviews((prev) => prev.filter((review) => review._id !== id));
+      toast.error("Review deleted successfully!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+    } catch (error) {
+      console.error("Failed to delete review:", error);
+      toast.error("Unable to delete review. Please try again.");
+    }
   };
 
   const handleEditClick = (review: Review) => {
-    setEditingReviewId(review.id);
+    setEditingReviewId(review._id);
     setEditedReview({
       user: review.user,
       rating: review.rating,
@@ -91,35 +130,25 @@ export default function ReviewSection() {
     setEditedReview((prev) => ({ ...prev, comment: e.target.value }));
   };
 
-  const handleSaveEdit = () => {
+  const handleSaveEdit = async () => {
     if (editingReviewId) {
-      const updatedReviews = reviews.map((review) =>
-        review.id === editingReviewId ? { ...review, ...editedReview } : review
-      );
-      setReviews(updatedReviews);
+      try {
+        await sanityClient.patch(editingReviewId).set(editedReview).commit();
+        const updatedReviews = reviews.map((review) =>
+          review._id === editingReviewId ? { ...review, ...editedReview } : review
+        );
+        setReviews(updatedReviews);
+        setEditingReviewId(null);
 
-      // Save updated reviews to localStorage
-      localStorage.setItem("reviews", JSON.stringify(updatedReviews));
-
-      setEditingReviewId(null);
-      toast.success("Review updated successfully!", {
-        position: "top-center",
-        autoClose: 3000,
-      });
+        toast.success("Review updated successfully!", {
+          position: "top-center",
+          autoClose: 3000,
+        });
+      } catch (error) {
+        console.error("Failed to update review:", error);
+        toast.error("Unable to update review. Please try again.");
+      }
     }
-  };
-
-  const handleDeleteClick = (id: string) => {
-    const updatedReviews = reviews.filter((review) => review.id !== id);
-    setReviews(updatedReviews);
-
-    // Save updated reviews to localStorage
-    localStorage.setItem("reviews", JSON.stringify(updatedReviews));
-
-    toast.error("Review deleted successfully!", {
-      position: "top-center",
-      autoClose: 3000,
-    });
   };
 
   return (
@@ -147,7 +176,9 @@ export default function ReviewSection() {
           {[1, 2, 3, 4, 5].map((star) => (
             <FaStar
               key={star}
-              className={`h-6 w-6 cursor-pointer ${star <= userReview.rating ? "text-yellow-500" : "text-gray-300"}`}
+              className={`h-6 w-6 cursor-pointer ${
+                star <= userReview.rating ? "text-yellow-500" : "text-gray-300"
+              }`}
               onClick={() => handleRatingChange(star)}
             />
           ))}
@@ -170,27 +201,31 @@ export default function ReviewSection() {
       {/* Display Reviews */}
       <div className="space-y-6">
         {reviews.map((review) => (
-          <div key={review.id} className="bg-white p-6 rounded-lg shadow-md">
+          <div key={review._id} className="bg-white p-6 rounded-lg shadow-md">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <FaStar
                     key={star}
-                    className={`h-5 w-5 ${star <= review.rating ? "text-yellow-500" : "text-gray-300"}`}
+                    className={`h-5 w-5 ${
+                      star <= review.rating ? "text-yellow-500" : "text-gray-300"
+                    }`}
                   />
                 ))}
               </div>
-              <span className="text-sm text-gray-600">{review.date}</span>
+              <span className="text-sm text-gray-600">{new Date(review.date).toLocaleString()}</span>
             </div>
             <h4 className="font-semibold text-gray-800">{review.user}</h4>
-            {editingReviewId === review.id ? (
+            {editingReviewId === review._id ? (
               <div className="mt-4">
                 <div className="flex items-center mb-4">
                   <span className="mr-2">Rating:</span>
                   {[1, 2, 3, 4, 5].map((star) => (
                     <FaStar
                       key={star}
-                      className={`h-6 w-6 cursor-pointer ${star <= editedReview.rating ? "text-yellow-500" : "text-gray-300"}`}
+                      className={`h-6 w-6 cursor-pointer ${
+                        star <= editedReview.rating ? "text-yellow-500" : "text-gray-300"
+                      }`}
                       onClick={() => handleEditRatingChange(star)}
                     />
                   ))}
@@ -212,18 +247,18 @@ export default function ReviewSection() {
             ) : (
               <>
                 <p className="text-gray-700 mt-2">{review.comment}</p>
-                <div className="flex gap-2 mt-4">
+                <div className="flex items-center space-x-2 mt-4">
                   <button
                     onClick={() => handleEditClick(review)}
-                    className="text-[#029FAE] hover:text-[#02abaee6] flex items-center"
+                    className="text-[#029FAE] hover:text-[#02abaee6] transition duration-300"
                   >
-                    <FaEdit className="mr-1" /> Edit
+                    <FaEdit className="inline mr-1" /> Edit
                   </button>
                   <button
-                    onClick={() => handleDeleteClick(review.id)}
-                    className="text-red-500 hover:text-red-600 flex items-center"
+                    onClick={() => handleDeleteClick(review._id)}
+                    className="text-red-500 hover:text-red-600 transition duration-300"
                   >
-                    <FaTrash className="mr-1" /> Delete
+                    <FaTrash className="inline mr-1" /> Delete
                   </button>
                 </div>
               </>
@@ -234,4 +269,3 @@ export default function ReviewSection() {
     </div>
   );
 }
-

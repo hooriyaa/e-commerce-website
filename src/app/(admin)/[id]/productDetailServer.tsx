@@ -15,7 +15,8 @@ export default async function ProductDetailServer({
       badge,
       description,
       image,
-      inventory
+      inventory,
+      tags,
     }`
   );
 
