@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div  className="max-w-8xl mx-auto">
      <Suspense fallback={<Loader />}>
-        <Hero />
+        <Hero/>
         </Suspense>
         <Suspense fallback={<Loader />}>
         <Companylogo />
