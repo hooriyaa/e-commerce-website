@@ -10,12 +10,22 @@ import Loader from "@/components/Loader";
 export default function Home() {
   return (
     <div className="max-w-8xl mx-auto">
-     <Suspense fallback={<Loader/>}>
+     <Suspense fallback={<Loader />}>
         <Hero />
+        </Suspense>
+        <Suspense fallback={<Loader />}>
         <Companylogo />
+        </Suspense>
+        <Suspense fallback={<Loader />}>
         <TopFeatures />
+        </Suspense>
+        <Suspense fallback={<Loader />}>
         <TopCategory />
+        </Suspense>
+        <Suspense fallback={<Loader />}>
         <ChairGallery />
+        </Suspense>
+        <Suspense fallback={<Loader />}>
         <OurProducts />
       </Suspense>
     </div>
