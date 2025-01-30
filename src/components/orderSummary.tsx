@@ -1,58 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "./ui/button";
 import { useCart } from "./context/CartContext";
 import { SignInButton, useUser } from "@clerk/nextjs";
-import { loadStripe } from "@stripe/stripe-js";
+import Link from "next/link";
+
 
 const OrderSummary = () => {
   const { isSignedIn } = useUser();
   const { totalPrice } = useCart();
-  const [loading, setLading] = useState(false);
-
-  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!);
-
-  const handleCheckout = async () => {
-    setLading(true); // Set loading state
-    try {
-      const cartItems: { id: number; price: number; quantity: number }[] = JSON.parse(
-        localStorage.getItem("cart") || "[]"
-      );
-  
-      // Call the Stripe checkout session API
-      const sessionResponse = await fetch("/api/create-checkout-session", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cartItems }),
-      });
-  
-      if (!sessionResponse.ok) {
-        const errorData = await sessionResponse.json();
-        throw new Error(errorData.error || "Failed to create Stripe session.");
-      }
-  
-      const session = await sessionResponse.json();
-      const stripe = await stripePromise;
-  
-      if (stripe) {
-        await stripe.redirectToCheckout({ sessionId: session.id });
-      } else {
-        console.error("Stripe failed to load.");
-      }
-    } catch (error) {
-      console.error("Checkout error:", error);
-      if (error instanceof Error) {
-        alert(error.message);
-      } else {
-        alert("An unknown error occurred.");
-      }
-    } finally {
-      setLading(false); // Reset loading state
-    }
-  }; 
 
   return (
-    <div className="px-6 py-7 bg-white rounded-lg shadow-sm">
+    <div className="px-6 py-5 bg-white rounded-lg shadow-lg">
       <h2 className="text-2xl font-semibold mb-6">Summary</h2>
       <div className="space-y-4">
         <div className="flex justify-between">
@@ -79,13 +38,13 @@ const OrderSummary = () => {
           </div>
         ) : (
           <div>
+            <Link href="/checkout">
             <Button
-              onClick={handleCheckout}
-              disabled={loading}
               className="mt-6 w-full bg-[#029FAE] text-[#ffffff] py-6 rounded-3xl text-lg font-medium hover:bg-[#02abaee6]"
             >
-              {loading ? "Processing..." : "Checkout"}
+              Checkout
             </Button>
+            </Link>
           </div>
         )}
       </div>

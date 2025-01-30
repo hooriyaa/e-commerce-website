@@ -29,6 +29,7 @@
     "next": "^15.1.1",
     "next-sanity": "^9.8.30",
     "node-fetch": "^3.3.2",
+    "nodemailer": "^6.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.17.12",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/shippo": "^1.7.8",
