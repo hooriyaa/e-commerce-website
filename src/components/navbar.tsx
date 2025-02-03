@@ -56,7 +56,7 @@ const Navbar = () => {
 
           {!isSignedIn ? (
             <div className="flex gap-2">
-              <div className="bg-[#FFFFFF] h-[44px] w-[44px] rounded-md p-3 relative">
+              <div className="bg-[#FFFFFF] h-[44px] w-[55px] rounded-md p-3 pl-4 relative">
                 <Link href="/wishlist">
                   <FaRegHeart
                     className="w-5 h-5 text-sm cursor-pointer"
@@ -69,7 +69,7 @@ const Navbar = () => {
                   )}
                 </Link>
               </div>
-              <div className="bg-[#FFFFFF] h-[44px] w-[44px] rounded-md p-3 ml-7">
+              <div className="bg-[#FFFFFF] h-[44px] w-[60px] rounded-md p-3 pl-5 ml-7 ">
                 <RiContactsLine className="w-5 h-5 text-sm cursor-pointer" />
               </div>
             </div>

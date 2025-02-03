@@ -13,7 +13,7 @@ const sanityClient = createClient({
 
 // Function to fetch the correct product _id using productId (number)
 async function getProductId(productId: number) {
-  const query = `*[_type == "products" && id == $productId][0]{_id}`;
+  const query = `*[_type in ["products","categories"] && id == $productId][0]{_id}`;
   const product = await sanityClient.fetch(query, { productId });
   return product?._id || null;
 }
