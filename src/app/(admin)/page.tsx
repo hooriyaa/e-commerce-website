@@ -9,25 +9,33 @@ import Loader from "@/components/Loader";
 
 export default function Home() {
   return (
-    <div  className="max-w-8xl mx-auto">
-     <Suspense fallback={<Loader />}>
-        <Hero/>
+    <>
+      <div className="max-w-8xl mx-auto">
+        <Suspense fallback={<Loader />}>
+          <Hero />
         </Suspense>
         <Suspense fallback={<Loader />}>
-        <Companylogo />
+          <Companylogo />
         </Suspense>
         <Suspense fallback={<Loader />}>
-        <TopFeatures />
+          <TopFeatures />
         </Suspense>
         <Suspense fallback={<Loader />}>
-        <TopCategory />
+          <TopCategory />
         </Suspense>
         <Suspense fallback={<Loader />}>
-        <ChairGallery />
+          <ChairGallery />
         </Suspense>
         <Suspense fallback={<Loader />}>
-        <OurProducts />
-      </Suspense>
-    </div>
+          <OurProducts />
+        </Suspense>
+      </div>
+      <div>
+        <script
+          src="//code.tidio.co/vcassegljkifkerm9t1etkk8p6h9javc.js"
+          async
+        ></script>
+      </div>
+    </>
   );
 }
