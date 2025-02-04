@@ -11,6 +11,12 @@ export default function Home() {
   return (
     <>
       <div className="max-w-8xl mx-auto">
+      <div>
+        <script
+          src="//code.tidio.co/vcassegljkifkerm9t1etkk8p6h9javc.js"
+          async
+        ></script>
+      </div>
         <Suspense fallback={<Loader />}>
           <Hero />
         </Suspense>
@@ -29,12 +35,6 @@ export default function Home() {
         <Suspense fallback={<Loader />}>
           <OurProducts />
         </Suspense>
-      </div>
-      <div>
-        <script
-          src="//code.tidio.co/vcassegljkifkerm9t1etkk8p6h9javc.js"
-          async
-        ></script>
       </div>
     </>
   );
