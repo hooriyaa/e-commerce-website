@@ -5,6 +5,11 @@ Comforty is an e-commerce platform specializing in offering a wide variety of so
 Below is a detailed breakdown of the project features, architecture, and workflow.
 
 ## Features:
+
+## Chatbot Integration:
+•An AI-powered chatbot is integrated to assist users with product inquiries, order tracking, and general support.
+
+
 ## Sanity CMS Integration:
 -Acts as the backend to store and manage:
 
@@ -19,6 +24,8 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 
 ## Third-Party API Integration:
 •ShipEngine: Used for calculating shipping rates and tracking orders.
+
+• NodeMailer: Sends email notifications to users after checkout, confirming order details.
 
 •Stripe: Used for secure payment processing.
 
@@ -50,18 +57,15 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 
 •Users can modify quantities or remove products from the cart.
 
+•Users must be signed in to proceed to checkout.
+
+
+
+## Checkout Page (localhost:3000/cart/checkout)
+
+•Collects shipping details and calculates shipping rates using ShipEngine.
+
 •Users must be signed in to proceed to payment.
-
-•Collects shipping information and integrates ShipEngine to calculate shipping rates.
-
-•Users must be signed in to proceed to payment.
-
-
-## Payment Page (localhost:3000/cart/payment)
-
-•Processes payments securely using Stripe.
-
-•Users must be signed in to complete the payment.
 
 
 ## Shipment Page (localhost:3000/shipment)
@@ -108,6 +112,16 @@ Below is a detailed breakdown of the project features, architecture, and workflo
 •Collects shipping details and calculates shipping rates using ShipEngine.
 
 •Users must be signed in to proceed to payment.
+
+
+## ➡️Order Confirmation:
+
+• Displays a success message with order details and shipping information.
+
+• Sends an email notification to the user through NodeMailer, confirming the order details.
+
+•Displays a success message with order details.
+
 
 ## ➡️Payment:
 
